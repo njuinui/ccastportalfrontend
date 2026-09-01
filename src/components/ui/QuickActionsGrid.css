@@ -1,0 +1,53 @@
+.qa-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+}
+
+@media (max-width: 575.98px) {
+    .qa-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+.qa-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    padding: 14px 8px;
+    border: 1.5px solid var(--gray-200);
+    border-radius: var(--radius-md);
+    background: var(--surface-card);
+    cursor: pointer;
+    transition: all 0.2s;
+    text-align: center;
+    text-decoration: none;
+}
+
+.qa-btn:hover {
+    border-color: var(--primary);
+    background: var(--color-info-50);
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-sm);
+}
+
+.qa-btn-ic {
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.qa-btn-ic .material-symbols-outlined {
+    font-size: 18px;
+}
+
+.qa-btn-label {
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--gray-600);
+    line-height: 1.2;
+}

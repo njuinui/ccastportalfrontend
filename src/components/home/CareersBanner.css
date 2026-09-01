@@ -1,0 +1,1104 @@
+/* ============================================================
+   CCAST CAREERS BANNER
+   Premium institutional recruitment CTA
+   ============================================================ */
+
+.cb {
+    --cb-navy: var(--hp-navy, #1e3a5f);
+    --cb-navy-dark: #102a43;
+    --cb-orange: var(--hp-accent, #f97316);
+    --cb-orange-light: #fb923c;
+    --cb-text: #172033;
+    --cb-muted: #64748b;
+    --cb-border: #e5eaf0;
+
+    position: relative;
+    padding: 6.5rem 0;
+    overflow: hidden;
+    background:
+        radial-gradient(
+            circle at 8% 20%,
+            rgba(249, 115, 22, 0.07),
+            transparent 28%
+        ),
+        radial-gradient(
+            circle at 90% 80%,
+            rgba(30, 58, 95, 0.06),
+            transparent 30%
+        ),
+        #f8fafc;
+}
+
+/* ============================================================
+   MAIN CARD
+   ============================================================ */
+
+.cb-card {
+    position: relative;
+    display: grid;
+    grid-template-columns: minmax(360px, 0.92fr) minmax(0, 1.18fr);
+    min-height: 570px;
+
+    overflow: hidden;
+
+    border: 1px solid rgba(226, 232, 240, 0.9);
+    border-radius: 30px;
+
+    background: #ffffff;
+
+    box-shadow:
+        0 35px 90px rgba(15, 23, 42, 0.11),
+        0 10px 35px rgba(15, 23, 42, 0.055);
+
+    isolation: isolate;
+}
+
+/* ============================================================
+   DECORATIVE CARD ELEMENTS
+   ============================================================ */
+
+.cb-grid {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+
+    opacity: 0.3;
+
+    background-image:
+        linear-gradient(
+            rgba(30, 58, 95, 0.035) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(30, 58, 95, 0.035) 1px,
+            transparent 1px
+        );
+
+    background-size: 40px 40px;
+
+    pointer-events: none;
+}
+
+.cb-glow {
+    position: absolute;
+    width: 320px;
+    height: 320px;
+
+    border-radius: 50%;
+    filter: blur(80px);
+
+    pointer-events: none;
+}
+
+.cb-glow--one {
+    top: -180px;
+    right: -120px;
+    background: rgba(249, 115, 22, 0.07);
+}
+
+.cb-glow--two {
+    bottom: -180px;
+    left: 30%;
+    background: rgba(30, 58, 95, 0.06);
+}
+
+/* ============================================================
+   MEDIA PANEL
+   ============================================================ */
+
+.cb-media {
+    position: relative;
+    min-height: 570px;
+    overflow: hidden;
+
+    color: #ffffff;
+
+    background:
+        radial-gradient(
+            circle at 80% 20%,
+            rgba(249, 115, 22, 0.35),
+            transparent 32%
+        ),
+        linear-gradient(
+            145deg,
+            #0b2039 0%,
+            #153d65 42%,
+            #1e3a5f 72%,
+            #102a43 100%
+        );
+}
+
+/* Dark overlay */
+
+.cb-media-shade {
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(4, 15, 29, 0.32),
+            transparent 48%,
+            rgba(249, 115, 22, 0.06)
+        );
+
+    pointer-events: none;
+}
+
+/* ============================================================
+   DECORATIVE ORBITS
+   ============================================================ */
+
+.cb-orbit {
+    position: absolute;
+
+    border: 1px solid rgba(255, 255, 255, 0.09);
+    border-radius: 50%;
+
+    pointer-events: none;
+}
+
+.cb-orbit--one {
+    width: 470px;
+    height: 470px;
+
+    top: -210px;
+    right: -190px;
+}
+
+.cb-orbit--two {
+    width: 310px;
+    height: 310px;
+
+    top: -130px;
+    right: -110px;
+
+    border-color: rgba(249, 115, 22, 0.16);
+}
+
+/* ============================================================
+   FLOATING RECRUITMENT CARD
+   ============================================================ */
+
+.cb-floating {
+    position: absolute;
+    z-index: 5;
+
+    top: 38px;
+    right: 32px;
+
+    display: flex;
+    align-items: center;
+    gap: 11px;
+
+    padding: 11px 14px;
+
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    border-radius: 14px;
+
+    background: rgba(255, 255, 255, 0.09);
+
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+
+    box-shadow:
+        0 15px 35px rgba(0, 0, 0, 0.14);
+}
+
+.cb-floating-icon {
+    width: 36px;
+    height: 36px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 10px;
+
+    color: #ffffff;
+    background: rgba(249, 115, 22, 0.2);
+}
+
+.cb-floating strong,
+.cb-floating span {
+    display: block;
+}
+
+.cb-floating strong {
+    color: #ffffff;
+    font-size: 0.78rem;
+    font-weight: 800;
+}
+
+.cb-floating div > span {
+    margin-top: 2px;
+    color: rgba(255, 255, 255, 0.58);
+    font-size: 0.65rem;
+}
+
+/* ============================================================
+   MEDIA CONTENT
+   ============================================================ */
+
+.cb-media-content {
+    position: relative;
+    z-index: 4;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    min-height: 570px;
+
+    padding: 58px;
+}
+
+/* ============================================================
+   HIRING BADGE
+   ============================================================ */
+
+.cb-hiring-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+
+    width: fit-content;
+
+    margin-bottom: 28px;
+    padding: 8px 13px;
+
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    border-radius: 999px;
+
+    background: rgba(255, 255, 255, 0.08);
+
+    color: rgba(255, 255, 255, 0.88);
+
+    font-size: 0.68rem;
+    font-weight: 800;
+
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+}
+
+.cb-status-dot {
+    position: relative;
+
+    width: 8px;
+    height: 8px;
+
+    border-radius: 50%;
+
+    background: #22c55e;
+
+    box-shadow:
+        0 0 0 5px rgba(34, 197, 94, 0.13);
+}
+
+/* ============================================================
+   ICON
+   ============================================================ */
+
+.cb-icon-circle {
+    width: 76px;
+    height: 76px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 25px;
+
+    border: 1px solid rgba(255, 255, 255, 0.13);
+    border-radius: 21px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255, 255, 255, 0.15),
+            rgba(255, 255, 255, 0.055)
+        );
+
+    box-shadow:
+        inset 0 1px rgba(255, 255, 255, 0.1),
+        0 18px 35px rgba(0, 0, 0, 0.12);
+
+    font-size: 1.7rem;
+
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+}
+
+.cb-media-kicker {
+    margin-bottom: 8px;
+
+    color: #fdba74;
+
+    font-size: 0.7rem;
+    font-weight: 800;
+
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+}
+
+/* ============================================================
+   MEDIA TITLE
+   ============================================================ */
+
+.cb-media-content h3 {
+    max-width: 430px;
+
+    margin: 0 0 17px;
+
+    color: #ffffff;
+
+    font-size: clamp(2.15rem, 3.4vw, 3.2rem);
+    line-height: 1.04;
+
+    font-weight: 850;
+
+    letter-spacing: -0.045em;
+}
+
+.cb-media-content h3 span {
+    color: #fb923c;
+}
+
+.cb-media-content p {
+    max-width: 430px;
+
+    margin: 0;
+
+    color: rgba(255, 255, 255, 0.68);
+
+    font-size: 0.91rem;
+    line-height: 1.75;
+}
+
+/* ============================================================
+   STATISTICS
+   ============================================================ */
+
+.cb-stat-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0;
+
+    margin-top: 42px;
+}
+
+.cb-stat {
+    min-width: 105px;
+
+    padding-right: 28px;
+    margin-right: 28px;
+
+    border-right: 1px solid rgba(255, 255, 255, 0.13);
+}
+
+.cb-stat:last-child {
+    margin-right: 0;
+    padding-right: 0;
+    border-right: 0;
+}
+
+.cb-stat strong {
+    display: block;
+
+    color: #ffffff;
+
+    font-size: 1.65rem;
+    line-height: 1;
+
+    font-weight: 850;
+
+    letter-spacing: -0.03em;
+}
+
+.cb-stat span {
+    display: block;
+
+    margin-top: 7px;
+
+    color: rgba(255, 255, 255, 0.48);
+
+    font-size: 0.64rem;
+    line-height: 1.35;
+}
+
+/* ============================================================
+   BOTTOM DECORATIVE DOTS
+   ============================================================ */
+
+.cb-media-bottom {
+    position: absolute;
+
+    left: 58px;
+    bottom: 30px;
+
+    display: flex;
+    gap: 7px;
+
+    z-index: 3;
+}
+
+.cb-media-bottom span {
+    width: 5px;
+    height: 5px;
+
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.28);
+}
+
+.cb-media-bottom span:first-child {
+    width: 22px;
+    border-radius: 20px;
+    background: rgba(249, 115, 22, 0.8);
+}
+
+/* ============================================================
+   BODY
+   ============================================================ */
+
+.cb-body {
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    padding: 62px 70px;
+
+    background: #ffffff;
+}
+
+/* ============================================================
+   EYEBROW
+   ============================================================ */
+
+.cb-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+
+    width: fit-content;
+
+    margin-bottom: 20px;
+
+    color: var(--cb-navy);
+
+    font-size: 0.68rem;
+    font-weight: 850;
+
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+}
+
+.cb-eyebrow-icon {
+    width: 31px;
+    height: 31px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 9px;
+
+    color: var(--cb-orange);
+    background: rgba(249, 115, 22, 0.09);
+}
+
+/* ============================================================
+   TITLE
+   ============================================================ */
+
+.cb-title {
+    max-width: 650px;
+
+    margin: 0 0 20px;
+
+    color: var(--cb-text);
+
+    font-size: clamp(2.35rem, 4vw, 3.55rem);
+    line-height: 1.04;
+
+    font-weight: 850;
+
+    letter-spacing: -0.055em;
+}
+
+.cb-title-accent {
+    color: var(--cb-orange);
+}
+
+.cb-title-muted {
+    color: var(--cb-navy);
+}
+
+/* ============================================================
+   LEAD
+   ============================================================ */
+
+.cb-lead {
+    max-width: 680px;
+
+    margin: 0 0 28px;
+
+    color: var(--cb-muted);
+
+    font-size: 0.94rem;
+    line-height: 1.8;
+}
+
+/* ============================================================
+   PERKS HEADING
+   ============================================================ */
+
+.cb-perks-heading {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+
+    margin-bottom: 14px;
+
+    color: #334155;
+
+    font-size: 0.7rem;
+    font-weight: 800;
+
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+}
+
+.cb-perks-heading::after {
+    content: "";
+
+    width: 45px;
+    height: 1px;
+
+    background: #e2e8f0;
+}
+
+/* ============================================================
+   PERKS
+   ============================================================ */
+
+.cb-perks {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 10px 18px;
+
+    padding: 0;
+    margin: 0 0 30px;
+
+    list-style: none;
+}
+
+.cb-perk {
+    min-height: 51px;
+
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    padding: 7px 9px 7px 7px;
+
+    border: 1px solid transparent;
+    border-radius: 12px;
+
+    transition:
+        background 0.25s ease,
+        border-color 0.25s ease,
+        transform 0.25s ease;
+}
+
+.cb-perk:hover {
+    transform: translateY(-2px);
+
+    border-color: #edf1f5;
+    background: #f8fafc;
+}
+
+.cb-perk-icon {
+    flex: 0 0 36px;
+
+    width: 36px;
+    height: 36px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 10px;
+
+    color: var(--cb-navy);
+    background: #f1f5f9;
+
+    font-size: 0.78rem;
+
+    transition:
+        background 0.25s ease,
+        color 0.25s ease;
+}
+
+.cb-perk:hover .cb-perk-icon {
+    color: #ffffff;
+    background: var(--cb-orange);
+}
+
+.cb-perk-label {
+    flex: 1;
+
+    color: #334155;
+
+    font-size: 0.76rem;
+    line-height: 1.35;
+    font-weight: 700;
+}
+
+.cb-perk-check {
+    color: #22c55e;
+    font-size: 0.65rem;
+}
+
+/* ============================================================
+   BUTTONS
+   ============================================================ */
+
+.cb-ctas {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 11px;
+}
+
+.cb-btn {
+    min-height: 50px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+
+    padding: 0 18px;
+
+    border-radius: 12px;
+
+    text-decoration: none;
+
+    font-size: 0.77rem;
+    font-weight: 800;
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        background 0.25s ease,
+        border-color 0.25s ease,
+        color 0.25s ease;
+}
+
+.cb-btn:hover {
+    transform: translateY(-2px);
+}
+
+.cb-btn:focus-visible {
+    outline: 3px solid rgba(249, 115, 22, 0.22);
+    outline-offset: 3px;
+}
+
+/* Primary */
+
+.cb-btn--primary {
+    color: #ffffff;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--cb-navy),
+            #254c76
+        );
+
+    box-shadow:
+        0 12px 25px rgba(30, 58, 95, 0.2);
+}
+
+.cb-btn--primary:hover {
+    color: #ffffff;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--cb-orange),
+            #ea580c
+        );
+
+    box-shadow:
+        0 16px 30px rgba(249, 115, 22, 0.24);
+}
+
+/* Button icon container */
+
+.cb-btn--primary > span,
+.cb-btn--ghost > span {
+    width: 27px;
+    height: 27px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 8px;
+
+    background: rgba(255, 255, 255, 0.12);
+}
+
+/* Arrow */
+
+.cb-arrow {
+    margin-left: 4px;
+
+    transition: transform 0.25s ease;
+}
+
+.cb-btn--primary:hover .cb-arrow {
+    transform: translateX(4px);
+}
+
+/* Ghost */
+
+.cb-btn--ghost {
+    color: #334155;
+
+    border: 1px solid #e2e8f0;
+
+    background: #ffffff;
+}
+
+.cb-btn--ghost:hover {
+    color: var(--cb-navy);
+
+    border-color: #cbd5e1;
+
+    background: #f8fafc;
+}
+
+/* ============================================================
+   SECURITY NOTE
+   ============================================================ */
+
+.cb-note {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+
+    margin-top: 20px;
+
+    color: #94a3b8;
+
+    font-size: 0.65rem;
+    line-height: 1.45;
+}
+
+.cb-note-icon {
+    flex: 0 0 25px;
+
+    width: 25px;
+    height: 25px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 7px;
+
+    color: #16a34a;
+    background: rgba(22, 163, 74, 0.08);
+}
+
+/* ============================================================
+   RESPONSIVE — LARGE TABLET
+   ============================================================ */
+
+@media (max-width: 1199.98px) {
+
+    .cb {
+        padding: 5rem 0;
+    }
+
+    .cb-card {
+        grid-template-columns:
+            minmax(320px, 0.9fr)
+            minmax(0, 1.1fr);
+    }
+
+    .cb-media-content {
+        padding: 48px;
+    }
+
+    .cb-body {
+        padding: 52px 48px;
+    }
+
+    .cb-title {
+        font-size: clamp(2.2rem, 4vw, 3rem);
+    }
+
+    .cb-floating {
+        right: 22px;
+    }
+}
+
+/* ============================================================
+   RESPONSIVE — TABLET
+   ============================================================ */
+
+@media (max-width: 991.98px) {
+
+    .cb {
+        padding: 4.5rem 0;
+    }
+
+    .cb-card {
+        grid-template-columns: 1fr;
+
+        min-height: auto;
+
+        border-radius: 26px;
+    }
+
+    .cb-media,
+    .cb-media-content {
+        min-height: 500px;
+    }
+
+    .cb-media-content {
+        padding: 55px;
+    }
+
+    .cb-body {
+        padding: 55px;
+    }
+
+    .cb-title {
+        max-width: 650px;
+    }
+
+    .cb-lead {
+        max-width: 700px;
+    }
+
+    .cb-floating {
+        top: 30px;
+        right: 30px;
+    }
+}
+
+/* ============================================================
+   RESPONSIVE — MOBILE
+   ============================================================ */
+
+@media (max-width: 767.98px) {
+
+    .cb {
+        padding: 3.5rem 0;
+    }
+
+    .cb-card {
+        border-radius: 22px;
+    }
+
+    .cb-media,
+    .cb-media-content {
+        min-height: 450px;
+    }
+
+    .cb-media-content {
+        padding: 38px 25px;
+    }
+
+    .cb-body {
+        padding: 38px 25px;
+    }
+
+    .cb-floating {
+        top: 20px;
+        right: 20px;
+
+        padding: 9px 11px;
+    }
+
+    .cb-floating-icon {
+        width: 31px;
+        height: 31px;
+    }
+
+    .cb-floating strong {
+        font-size: 0.68rem;
+    }
+
+    .cb-floating div > span {
+        font-size: 0.58rem;
+    }
+
+    .cb-hiring-badge {
+        margin-bottom: 24px;
+
+        font-size: 0.6rem;
+    }
+
+    .cb-icon-circle {
+        width: 64px;
+        height: 64px;
+
+        margin-bottom: 20px;
+
+        border-radius: 18px;
+
+        font-size: 1.4rem;
+    }
+
+    .cb-media-content h3 {
+        font-size: 2.25rem;
+    }
+
+    .cb-media-content p {
+        font-size: 0.84rem;
+    }
+
+    .cb-stat-row {
+        margin-top: 32px;
+    }
+
+    .cb-stat {
+        min-width: 88px;
+
+        padding-right: 18px;
+        margin-right: 18px;
+    }
+
+    .cb-stat strong {
+        font-size: 1.35rem;
+    }
+
+    .cb-stat span {
+        font-size: 0.58rem;
+    }
+
+    .cb-media-bottom {
+        left: 25px;
+        bottom: 22px;
+    }
+
+    .cb-title {
+        font-size: 2.35rem;
+        letter-spacing: -0.045em;
+    }
+
+    .cb-lead {
+        font-size: 0.88rem;
+    }
+
+    .cb-perks {
+        grid-template-columns: 1fr;
+        gap: 7px;
+    }
+
+    .cb-perk {
+        min-height: 48px;
+    }
+
+    .cb-ctas {
+        flex-direction: column;
+    }
+
+    .cb-btn {
+        width: 100%;
+    }
+}
+
+/* ============================================================
+   RESPONSIVE — SMALL MOBILE
+   ============================================================ */
+
+@media (max-width: 480px) {
+
+    .cb {
+        padding: 2.75rem 0;
+    }
+
+    .cb-media,
+    .cb-media-content {
+        min-height: 430px;
+    }
+
+    .cb-media-content {
+        padding: 35px 20px;
+    }
+
+    .cb-body {
+        padding: 35px 20px;
+    }
+
+    .cb-floating {
+        display: none;
+    }
+
+    .cb-media-content h3 {
+        font-size: 2rem;
+    }
+
+    .cb-media-content p {
+        max-width: 320px;
+    }
+
+    .cb-stat {
+        min-width: 78px;
+
+        padding-right: 13px;
+        margin-right: 13px;
+    }
+
+    .cb-stat strong {
+        font-size: 1.2rem;
+    }
+
+    .cb-stat span {
+        max-width: 70px;
+    }
+
+    .cb-title {
+        font-size: 2.1rem;
+    }
+
+    .cb-eyebrow {
+        font-size: 0.6rem;
+    }
+
+    .cb-note {
+        align-items: flex-start;
+    }
+}
+
+/* ============================================================
+   REDUCED MOTION
+   ============================================================ */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .cb-btn,
+    .cb-arrow,
+    .cb-perk,
+    .cb-perk-icon {
+        transition: none;
+    }
+
+    .cb-btn:hover,
+    .cb-perk:hover {
+        transform: none;
+    }
+}

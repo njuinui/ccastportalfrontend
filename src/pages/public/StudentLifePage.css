@@ -1,0 +1,364 @@
+.student-life-page {
+  background: #fff;
+  color: #172033;
+}
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.student-life-hero {
+  position: relative;
+  overflow: hidden;
+  min-height: 600px;
+  display: flex;
+  align-items: center;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(5, 20, 42, 0.98),
+      rgba(9, 43, 79, 0.92)
+    ),
+    url("/images/student-life.jpg")
+      center / cover no-repeat;
+  color: #fff;
+}
+
+.student-life-hero::before {
+  content: "";
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  right: -170px;
+  top: -170px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+}
+
+.student-life-hero::after {
+  content: "";
+  position: absolute;
+  width: 700px;
+  height: 700px;
+  right: -270px;
+  top: -270px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 50%;
+}
+
+.student-life-hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 760px;
+  padding: 110px 0;
+}
+
+.student-life-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  padding: 9px 15px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.08);
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.student-life-hero h1 {
+  margin: 20px 0;
+  font-size: clamp(2.7rem, 6vw, 5rem);
+  line-height: 1.02;
+  font-weight: 850;
+  letter-spacing: -0.05em;
+}
+
+.student-life-hero p {
+  max-width: 680px;
+  color: rgba(255, 255, 255, 0.78);
+  font-size: 1.08rem;
+  line-height: 1.8;
+}
+
+.student-life-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 30px;
+}
+
+/* =========================================================
+   INTRO
+========================================================= */
+
+.student-life-intro {
+  padding: 90px 0;
+  background: #f7f9fc;
+}
+
+.student-life-intro-grid {
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+  gap: 80px;
+  align-items: start;
+}
+
+.student-life-section-label {
+  display: block;
+  margin-bottom: 9px;
+  color: #f97316;
+  font-size: 0.74rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.student-life-intro h2,
+.student-life-section-heading h2 {
+  margin: 0;
+  color: #102d4f;
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+}
+
+.student-life-intro p {
+  margin: 0;
+  color: #667085;
+  font-size: 1rem;
+  line-height: 1.9;
+}
+
+/* =========================================================
+   ACTIVITIES
+========================================================= */
+
+.student-life-activities {
+  padding: 100px 0;
+}
+
+.student-life-section-heading {
+  max-width: 700px;
+  margin-bottom: 45px;
+}
+
+.student-life-section-heading p {
+  margin: 12px 0 0;
+  color: #667085;
+  line-height: 1.8;
+}
+
+.student-life-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.student-life-card {
+  position: relative;
+  padding: 30px;
+  min-height: 300px;
+  overflow: hidden;
+  border: 1px solid #e7ebf0;
+  border-radius: 18px;
+  background: #fff;
+  box-shadow:
+    0 8px 35px rgba(16, 45, 79, 0.045);
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.student-life-card::after {
+  content: "";
+  position: absolute;
+  width: 130px;
+  height: 130px;
+  right: -70px;
+  bottom: -70px;
+  border-radius: 50%;
+  background: rgba(249, 115, 22, 0.07);
+}
+
+.student-life-card:hover {
+  transform: translateY(-7px);
+  border-color: rgba(249, 115, 22, 0.35);
+  box-shadow:
+    0 20px 45px rgba(16, 45, 79, 0.1);
+}
+
+.student-life-card-icon {
+  width: 56px;
+  height: 56px;
+  display: grid;
+  place-items: center;
+  margin-bottom: 25px;
+  border-radius: 15px;
+  background: rgba(249, 115, 22, 0.1);
+  color: #f97316;
+  font-size: 1.35rem;
+}
+
+.student-life-card-category {
+  color: #f97316;
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.student-life-card h3 {
+  margin: 7px 0 10px;
+  color: #102d4f;
+  font-size: 1.25rem;
+  font-weight: 800;
+}
+
+.student-life-card p {
+  margin: 0;
+  color: #6b7280;
+  font-size: 0.88rem;
+  line-height: 1.75;
+}
+
+.student-life-card-arrow {
+  display: inline-flex;
+  align-items: center;
+  margin-top: 20px;
+  color: #102d4f;
+  font-size: 0.78rem;
+  font-weight: 800;
+}
+
+/* =========================================================
+   CTA
+========================================================= */
+
+.student-life-cta {
+  padding: 0 0 100px;
+}
+
+.student-life-cta-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 35px;
+  padding: 55px;
+  border-radius: 24px;
+  background:
+    linear-gradient(
+      135deg,
+      #102d4f,
+      #0a3b67
+    );
+  color: #fff;
+}
+
+.student-life-cta-card > div {
+  max-width: 700px;
+}
+
+.student-life-cta-card span {
+  color: #fbbf24;
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.student-life-cta-card h2 {
+  margin: 10px 0;
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  font-weight: 800;
+  letter-spacing: -0.035em;
+}
+
+.student-life-cta-card p {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.7;
+}
+
+.student-life-cta-button {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  padding: 14px 20px;
+  border-radius: 10px;
+  background: #f97316;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+.student-life-cta-button:hover {
+  background: #ea580c;
+  color: #fff;
+}
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 991px) {
+  .student-life-intro-grid {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+
+  .student-life-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .student-life-cta-card {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 600px) {
+  .student-life-hero {
+    min-height: 550px;
+  }
+
+  .student-life-hero-content {
+    padding: 80px 0;
+  }
+
+  .student-life-hero h1 {
+    font-size: 2.6rem;
+  }
+
+  .student-life-actions {
+    flex-direction: column;
+  }
+
+  .student-life-actions .btn {
+    width: 100%;
+  }
+
+  .student-life-intro,
+  .student-life-activities {
+    padding: 70px 0;
+  }
+
+  .student-life-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .student-life-card {
+    min-height: auto;
+  }
+
+  .student-life-cta-card {
+    padding: 35px 25px;
+  }
+
+  .student-life-cta-button {
+    width: 100%;
+    justify-content: center;
+  }
+}

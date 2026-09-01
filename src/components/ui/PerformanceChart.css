@@ -1,0 +1,18 @@
+.performance-chart-wrap {
+  position: relative;
+  height: 130px;
+}
+.performance-chart-svg {
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+.performance-chart-labels {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 6px;
+}
+.performance-chart-labels span {
+  font-size: 10px;
+  color: var(--gray-400);
+}

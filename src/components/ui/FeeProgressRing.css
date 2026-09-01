@@ -1,0 +1,54 @@
+.fee-ring { text-align: center; }
+.fee-ring-circle {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  margin: 0 auto 10px;
+}
+.fee-ring-circle svg { transform: rotate(-90deg); }
+.fee-ring-bg {
+  fill: none;
+  stroke: var(--gray-50);
+  stroke-width: 8;
+}
+.fee-ring-fill {
+  fill: none;
+  stroke-width: 8;
+  stroke-linecap: round;
+  transition: stroke-dashoffset 1s var(--ease-out);
+}
+.fee-ring-center {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.fee-ring-pct {
+  font-size: 22px;
+  font-weight: 900;
+  line-height: 1;
+}
+.fee-ring-label {
+  font-size: 9px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--gray-400);
+  margin-top: 2px;
+}
+.fee-ring-amounts {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 0;
+  border-top: 1px solid var(--gray-200);
+}
+.fee-ring-amt { text-align: center; }
+.fee-ring-amt-val { font-size: 13px; font-weight: 800; }
+.fee-ring-amt-label {
+  font-size: 9.5px;
+  color: var(--gray-400);
+  text-transform: uppercase;
+  font-weight: 600;
+}

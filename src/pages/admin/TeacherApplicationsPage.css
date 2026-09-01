@@ -1,0 +1,1206 @@
+/* ============================================================
+   TEACHER APPLICATIONS
+   ============================================================ */
+
+.teacher-applications-page {
+    min-height: 100%;
+    padding: 28px;
+    background: #f6f8fb;
+    color: #172033;
+}
+
+
+/* ============================================================
+   PAGE HEADER
+   ============================================================ */
+
+.ta-page-header {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 24px;
+    margin-bottom: 26px;
+}
+
+.ta-breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    margin-bottom: 8px;
+    color: #8993a4;
+    font-size: 13px;
+}
+
+.ta-breadcrumb i {
+    font-size: 16px;
+}
+
+.ta-breadcrumb strong {
+    color: #566174;
+    font-weight: 600;
+}
+
+.ta-page-header h1 {
+    margin: 0;
+    font-size: clamp(25px, 3vw, 34px);
+    line-height: 1.15;
+    letter-spacing: -0.6px;
+}
+
+.ta-page-header p {
+    margin: 8px 0 0;
+    color: #758095;
+    font-size: 14px;
+}
+
+.ta-refresh-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    height: 42px;
+    padding: 0 16px;
+    border: 1px solid #dfe4ec;
+    border-radius: 10px;
+    background: #fff;
+    color: #263247;
+    font-weight: 600;
+    cursor: pointer;
+    transition:
+        border-color .2s ease,
+        box-shadow .2s ease,
+        transform .2s ease;
+}
+
+.ta-refresh-button:hover {
+    border-color: #b9c2d0;
+    box-shadow: 0 5px 16px rgba(20, 31, 51, .07);
+}
+
+.ta-refresh-button:disabled {
+    opacity: .6;
+    cursor: not-allowed;
+}
+
+.ta-spin {
+    animation: ta-spin 1s linear infinite;
+}
+
+@keyframes ta-spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+/* ============================================================
+   STATISTICS
+   ============================================================ */
+
+.ta-stat-grid {
+    display: grid;
+    grid-template-columns:
+        repeat(4, minmax(0, 1fr));
+    gap: 14px;
+    margin-bottom: 22px;
+}
+
+.ta-stat-card {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    min-width: 0;
+    padding: 18px;
+    border: 1px solid #e7ebf1;
+    border-radius: 14px;
+    background: #fff;
+    box-shadow: 0 2px 8px rgba(24, 38, 61, .025);
+}
+
+.ta-stat-icon {
+    display: grid;
+    place-items: center;
+    flex: 0 0 42px;
+    width: 42px;
+    height: 42px;
+    border-radius: 11px;
+    background: #f0f5ff;
+    color: #3569d4;
+    font-size: 21px;
+}
+
+.ta-stat-content {
+    min-width: 0;
+}
+
+.ta-stat-content span {
+    display: block;
+    overflow: hidden;
+    color: #7d8799;
+    font-size: 12px;
+    font-weight: 600;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.ta-stat-content strong {
+    display: block;
+    margin-top: 3px;
+    color: #172033;
+    font-size: 23px;
+    line-height: 1.1;
+}
+
+
+/* ============================================================
+   TOOLBAR
+   ============================================================ */
+
+.ta-toolbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 14px;
+    margin-bottom: 15px;
+}
+
+.ta-search {
+    position: relative;
+    display: flex;
+    align-items: center;
+    flex: 1;
+    max-width: 650px;
+}
+
+.ta-search > svg {
+    position: absolute;
+    left: 14px;
+    color: #929caf;
+    pointer-events: none;
+}
+
+.ta-search input {
+    width: 100%;
+    height: 44px;
+    padding: 0 43px;
+    border: 1px solid #dfe4ec;
+    border-radius: 11px;
+    outline: none;
+    background: #fff;
+    color: #172033;
+    font: inherit;
+    transition:
+        border-color .2s ease,
+        box-shadow .2s ease;
+}
+
+.ta-search input:focus {
+    border-color: #7194df;
+    box-shadow: 0 0 0 3px rgba(53, 105, 212, .09);
+}
+
+.ta-search button {
+    position: absolute;
+    right: 9px;
+    display: grid;
+    place-items: center;
+    width: 28px;
+    height: 28px;
+    border: 0;
+    border-radius: 7px;
+    background: transparent;
+    color: #7f8999;
+    cursor: pointer;
+}
+
+.ta-search button:hover {
+    background: #f0f3f7;
+}
+
+.ta-filter {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    height: 44px;
+    padding: 0 12px;
+    border: 1px solid #dfe4ec;
+    border-radius: 11px;
+    background: #fff;
+    color: #798497;
+}
+
+.ta-filter select {
+    min-width: 165px;
+    border: 0;
+    outline: 0;
+    background: transparent;
+    color: #273247;
+    font: inherit;
+    cursor: pointer;
+}
+
+
+/* ============================================================
+   ERROR
+   ============================================================ */
+
+.ta-error {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+    padding: 13px 15px;
+    border: 1px solid #f2c8c8;
+    border-radius: 10px;
+    background: #fff5f5;
+    color: #b33838;
+    font-size: 13px;
+}
+
+.ta-error i {
+    font-size: 19px;
+}
+
+.ta-error button {
+    margin-left: auto;
+    border: 0;
+    background: transparent;
+    color: inherit;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+
+/* ============================================================
+   TABLE CARD
+   ============================================================ */
+
+.ta-table-card {
+    overflow: hidden;
+    border: 1px solid #e5e9f0;
+    border-radius: 15px;
+    background: #fff;
+    box-shadow: 0 3px 12px rgba(24, 38, 61, .035);
+}
+
+.ta-table-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 20px;
+    border-bottom: 1px solid #edf0f4;
+}
+
+.ta-table-header h2 {
+    margin: 0;
+    font-size: 17px;
+}
+
+.ta-table-header span {
+    display: block;
+    margin-top: 3px;
+    color: #8a94a6;
+    font-size: 12px;
+}
+
+
+/* ============================================================
+   TABLE
+   ============================================================ */
+
+.ta-table-wrapper {
+    overflow-x: auto;
+}
+
+.ta-table {
+    width: 100%;
+    min-width: 1050px;
+    border-collapse: collapse;
+}
+
+.ta-table th {
+    padding: 13px 18px;
+    border-bottom: 1px solid #edf0f4;
+    background: #fafbfc;
+    color: #7d8798;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .05em;
+    text-align: left;
+    text-transform: uppercase;
+}
+
+.ta-table td {
+    padding: 14px 18px;
+    border-bottom: 1px solid #f0f2f5;
+    color: #4d586b;
+    font-size: 13px;
+    vertical-align: middle;
+}
+
+.ta-table tbody tr {
+    transition: background .15s ease;
+}
+
+.ta-table tbody tr:hover {
+    background: #fbfcfe;
+}
+
+.ta-table tbody tr:last-child td {
+    border-bottom: 0;
+}
+
+.ta-action-column {
+    width: 100px;
+}
+
+
+/* ============================================================
+   APPLICANT
+   ============================================================ */
+
+.ta-applicant {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    min-width: 190px;
+}
+
+.ta-avatar {
+    display: grid;
+    place-items: center;
+    flex: 0 0 38px;
+    width: 38px;
+    height: 38px;
+    border-radius: 10px;
+    background: #eef3ff;
+    color: #3569d4;
+    font-size: 14px;
+    font-weight: 800;
+}
+
+.ta-applicant strong {
+    display: block;
+    max-width: 180px;
+    overflow: hidden;
+    color: #1d2739;
+    font-size: 13px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.ta-applicant span,
+.ta-sub-text {
+    display: block;
+    margin-top: 3px;
+    max-width: 190px;
+    overflow: hidden;
+    color: #8993a3;
+    font-size: 11px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.ta-table code {
+    padding: 4px 7px;
+    border-radius: 6px;
+    background: #f4f6f9;
+    color: #536073;
+    font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
+    font-size: 11px;
+}
+
+.ta-position {
+    display: block;
+    color: #2a3447;
+    font-size: 13px;
+}
+
+.ta-date {
+    white-space: nowrap;
+}
+
+
+/* ============================================================
+   STATUS
+   ============================================================ */
+
+.ta-status {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 5px 9px;
+    border-radius: 999px;
+    font-size: 11px;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.ta-status-submitted {
+    background: #eef5ff;
+    color: #3267c9;
+}
+
+.ta-status-under_review {
+    background: #fff6e8;
+    color: #a96911;
+}
+
+.ta-status-shortlisted {
+    background: #f3edff;
+    color: #7043bb;
+}
+
+.ta-status-interview {
+    background: #eaf8f7;
+    color: #168477;
+}
+
+.ta-status-accepted {
+    background: #eaf8ef;
+    color: #25834a;
+}
+
+.ta-status-rejected {
+    background: #fff0f0;
+    color: #c33d3d;
+}
+
+.ta-status-withdrawn {
+    background: #f1f3f5;
+    color: #687386;
+}
+
+
+/* ============================================================
+   VIEW BUTTON
+   ============================================================ */
+
+.ta-view-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    height: 34px;
+    padding: 0 10px;
+    border: 1px solid #dce3ee;
+    border-radius: 8px;
+    background: #fff;
+    color: #3569d4;
+    font-size: 12px;
+    font-weight: 700;
+    cursor: pointer;
+    transition:
+        background .2s ease,
+        border-color .2s ease;
+}
+
+.ta-view-button:hover {
+    border-color: #aebee0;
+    background: #f4f7ff;
+}
+
+
+/* ============================================================
+   EMPTY
+   ============================================================ */
+
+.ta-empty {
+    height: 300px;
+    text-align: center !important;
+}
+
+.ta-empty > div {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.ta-empty-icon {
+    display: grid;
+    place-items: center;
+    width: 55px;
+    height: 55px;
+    margin-bottom: 12px;
+    border-radius: 14px;
+    background: #f1f4f8;
+    color: #8792a4;
+    font-size: 25px;
+}
+
+.ta-empty h3 {
+    margin: 0;
+    color: #263247;
+    font-size: 15px;
+}
+
+.ta-empty p {
+    margin: 5px 0 0;
+    color: #8a94a5;
+    font-size: 12px;
+}
+
+
+/* ============================================================
+   SKELETON
+   ============================================================ */
+
+.ta-skeleton-row td span {
+    display: block;
+    width: 80%;
+    height: 14px;
+    border-radius: 5px;
+    background: linear-gradient(
+        90deg,
+        #f0f2f5,
+        #fafbfc,
+        #f0f2f5
+    );
+    background-size: 200% 100%;
+    animation: ta-skeleton 1.3s infinite;
+}
+
+@keyframes ta-skeleton {
+    0% {
+        background-position: 200% 0;
+    }
+
+    100% {
+        background-position: -200% 0;
+    }
+}
+
+
+/* ============================================================
+   PAGINATION
+   ============================================================ */
+
+.ta-pagination {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    padding: 14px 18px;
+    border-top: 1px solid #edf0f4;
+    color: #818b9c;
+    font-size: 12px;
+}
+
+.ta-pagination strong {
+    color: #273247;
+}
+
+.ta-pagination > div {
+    display: flex;
+    gap: 7px;
+}
+
+.ta-pagination button {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    height: 34px;
+    padding: 0 10px;
+    border: 1px solid #dfe4ec;
+    border-radius: 8px;
+    background: #fff;
+    color: #4d586b;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.ta-pagination button:hover:not(:disabled) {
+    background: #f6f8fb;
+}
+
+.ta-pagination button:disabled {
+    opacity: .45;
+    cursor: not-allowed;
+}
+
+
+/* ============================================================
+   MODAL
+   ============================================================ */
+
+.ta-modal-backdrop {
+    position: fixed;
+    z-index: 2000;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background: rgba(16, 24, 40, .55);
+    backdrop-filter: blur(4px);
+}
+
+.ta-modal {
+    display: flex;
+    overflow: hidden;
+    flex-direction: column;
+    width: min(900px, 100%);
+    max-height: min(900px, 94vh);
+    border-radius: 17px;
+    background: #fff;
+    box-shadow: 0 25px 70px rgba(16, 24, 40, .22);
+}
+
+
+/* ============================================================
+   MODAL HEADER
+   ============================================================ */
+
+.ta-modal-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    padding: 18px 22px;
+    border-bottom: 1px solid #edf0f4;
+}
+
+.ta-modal-title {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    min-width: 0;
+}
+
+.ta-modal-avatar {
+    display: grid;
+    place-items: center;
+    flex: 0 0 47px;
+    width: 47px;
+    height: 47px;
+    border-radius: 13px;
+    background: #edf3ff;
+    color: #3569d4;
+    font-size: 17px;
+    font-weight: 800;
+}
+
+.ta-modal-title span {
+    display: block;
+    margin-bottom: 2px;
+    color: #8993a4;
+    font-size: 11px;
+}
+
+.ta-modal-title h2 {
+    margin: 0;
+    overflow: hidden;
+    color: #1b2537;
+    font-size: 18px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.ta-modal-title code {
+    display: inline-block;
+    margin-top: 3px;
+    color: #718096;
+    font-size: 10px;
+}
+
+.ta-modal-close {
+    display: grid;
+    place-items: center;
+    flex: 0 0 35px;
+    width: 35px;
+    height: 35px;
+    border: 0;
+    border-radius: 9px;
+    background: #f4f6f8;
+    color: #667085;
+    cursor: pointer;
+}
+
+.ta-modal-close:hover {
+    background: #e9edf2;
+}
+
+
+/* ============================================================
+   MODAL BODY
+   ============================================================ */
+
+.ta-modal-body {
+    overflow-y: auto;
+    padding: 22px;
+}
+
+.ta-modal-loading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    min-height: 350px;
+    color: #7b8698;
+    font-size: 13px;
+}
+
+.ta-spinner,
+.ta-button-spinner {
+    display: inline-block;
+    border: 2px solid #dfe5ee;
+    border-top-color: currentColor;
+    border-radius: 50%;
+    animation: ta-spin .8s linear infinite;
+}
+
+.ta-spinner {
+    width: 24px;
+    height: 24px;
+    color: #3569d4;
+}
+
+.ta-button-spinner {
+    width: 14px;
+    height: 14px;
+    color: currentColor;
+}
+
+
+/* ============================================================
+   DETAIL SECTIONS
+   ============================================================ */
+
+.ta-detail-section,
+.ta-review-section {
+    padding: 0 0 23px;
+    margin-bottom: 23px;
+    border-bottom: 1px solid #edf0f4;
+}
+
+.ta-review-section {
+    margin-bottom: 0;
+}
+
+.ta-detail-heading {
+    display: flex;
+    align-items: flex-start;
+    gap: 9px;
+    margin-bottom: 17px;
+    color: #3569d4;
+}
+
+.ta-detail-heading > svg,
+.ta-detail-heading > i {
+    flex: 0 0 auto;
+    margin-top: 1px;
+    font-size: 19px;
+}
+
+.ta-detail-heading h3 {
+    margin: 0;
+    color: #253044;
+    font-size: 14px;
+}
+
+.ta-detail-heading span {
+    display: block;
+    margin-top: 3px;
+    color: #8a94a5;
+    font-size: 11px;
+}
+
+.ta-detail-grid {
+    display: grid;
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+    gap: 16px;
+}
+
+.ta-detail-grid > div {
+    min-width: 0;
+}
+
+.ta-detail-full {
+    grid-column: 1 / -1;
+}
+
+.ta-detail-grid label,
+.ta-review-form label {
+    display: block;
+    margin-bottom: 5px;
+    color: #8993a3;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: .04em;
+    text-transform: uppercase;
+}
+
+.ta-detail-grid strong {
+    display: block;
+    overflow-wrap: anywhere;
+    color: #293449;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.ta-contact {
+    display: flex !important;
+    align-items: center;
+    gap: 6px;
+}
+
+
+/* ============================================================
+   COVER LETTER
+   ============================================================ */
+
+.ta-cover-letter {
+    padding: 15px;
+    border: 1px solid #e9edf2;
+    border-radius: 10px;
+    background: #fafbfc;
+    color: #4f5b6e;
+    font-size: 13px;
+    line-height: 1.7;
+    white-space: pre-wrap;
+}
+
+
+/* ============================================================
+   DOCUMENTS
+   ============================================================ */
+
+.ta-documents {
+    display: grid;
+    gap: 9px;
+}
+
+.ta-document {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    padding: 11px;
+    border: 1px solid #e7ebf1;
+    border-radius: 10px;
+}
+
+.ta-document-icon {
+    display: grid;
+    place-items: center;
+    flex: 0 0 37px;
+    width: 37px;
+    height: 37px;
+    border-radius: 9px;
+    background: #f0f4ff;
+    color: #3569d4;
+}
+
+.ta-document-info {
+    min-width: 0;
+    flex: 1;
+}
+
+.ta-document-info strong {
+    display: block;
+    color: #293449;
+    font-size: 12px;
+}
+
+.ta-document-info span {
+    display: block;
+    margin-top: 3px;
+    overflow: hidden;
+    color: #8b95a6;
+    font-size: 10px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.ta-document button {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    flex-shrink: 0;
+    height: 32px;
+    padding: 0 9px;
+    border: 1px solid #dbe2ed;
+    border-radius: 7px;
+    background: #fff;
+    color: #3569d4;
+    font-size: 11px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.ta-document button:hover {
+    background: #f4f7ff;
+}
+
+.ta-no-documents {
+    padding: 20px;
+    border-radius: 10px;
+    background: #f7f8fa;
+    color: #8993a3;
+    font-size: 12px;
+    text-align: center;
+}
+
+
+/* ============================================================
+   REVIEW FORM
+   ============================================================ */
+
+.ta-review-section {
+    padding: 17px;
+    border: 1px solid #e2e8f2;
+    border-radius: 12px;
+    background: #f8faff;
+}
+
+.ta-review-form {
+    display: grid;
+    gap: 15px;
+}
+
+.ta-review-form select,
+.ta-review-form textarea {
+    width: 100%;
+    border: 1px solid #dce3ed;
+    border-radius: 9px;
+    outline: none;
+    background: #fff;
+    color: #293449;
+    font: inherit;
+}
+
+.ta-review-form select {
+    height: 42px;
+    padding: 0 11px;
+}
+
+.ta-review-form textarea {
+    padding: 11px;
+    resize: vertical;
+    line-height: 1.5;
+}
+
+.ta-review-form select:focus,
+.ta-review-form textarea:focus {
+    border-color: #7194df;
+    box-shadow: 0 0 0 3px rgba(53, 105, 212, .08);
+}
+
+.ta-review-form small {
+    display: block;
+    margin-top: 4px;
+    color: #929baa;
+    font-size: 10px;
+    text-align: right;
+}
+
+
+/* ============================================================
+   MODAL FOOTER
+   ============================================================ */
+
+.ta-modal-footer {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 9px;
+    padding: 14px 22px;
+    border-top: 1px solid #edf0f4;
+    background: #fff;
+}
+
+.ta-secondary-button,
+.ta-primary-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    height: 39px;
+    padding: 0 14px;
+    border-radius: 9px;
+    font-size: 12px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.ta-secondary-button {
+    border: 1px solid #dce2eb;
+    background: #fff;
+    color: #596578;
+}
+
+.ta-primary-button {
+    border: 1px solid #3569d4;
+    background: #3569d4;
+    color: #fff;
+}
+
+.ta-primary-button:hover:not(:disabled) {
+    background: #2c5bbd;
+}
+
+.ta-primary-button:disabled {
+    opacity: .6;
+    cursor: not-allowed;
+}
+
+.ta-modal-error {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 15px;
+    padding: 11px 13px;
+    border: 1px solid #f0c8c8;
+    border-radius: 8px;
+    background: #fff5f5;
+    color: #b33b3b;
+    font-size: 12px;
+}
+
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+
+@media (max-width: 1200px) {
+    .ta-stat-grid {
+        grid-template-columns:
+            repeat(4, minmax(0, 1fr));
+    }
+
+    .ta-stat-card {
+        padding: 14px;
+    }
+
+    .ta-stat-icon {
+        flex-basis: 37px;
+        width: 37px;
+        height: 37px;
+    }
+
+    .ta-stat-content strong {
+        font-size: 20px;
+    }
+}
+
+
+@media (max-width: 900px) {
+    .teacher-applications-page {
+        padding: 20px;
+    }
+
+    .ta-stat-grid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+    .ta-page-header {
+        align-items: flex-start;
+    }
+}
+
+
+@media (max-width: 650px) {
+    .teacher-applications-page {
+        padding: 14px;
+    }
+
+    .ta-page-header {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .ta-refresh-button {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .ta-toolbar {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .ta-search {
+        max-width: none;
+    }
+
+    .ta-filter {
+        width: 100%;
+    }
+
+    .ta-filter select {
+        width: 100%;
+    }
+
+    .ta-stat-grid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+        gap: 9px;
+    }
+
+    .ta-stat-card {
+        padding: 12px;
+    }
+
+    .ta-stat-icon {
+        display: none;
+    }
+
+    .ta-stat-content strong {
+        font-size: 19px;
+    }
+
+    .ta-modal-backdrop {
+        align-items: flex-end;
+        padding: 0;
+    }
+
+    .ta-modal {
+        width: 100%;
+        max-height: 96vh;
+        border-radius: 17px 17px 0 0;
+    }
+
+    .ta-modal-header,
+    .ta-modal-body,
+    .ta-modal-footer {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+    .ta-detail-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .ta-detail-full {
+        grid-column: auto;
+    }
+
+    .ta-modal-footer {
+        flex-direction: column-reverse;
+    }
+
+    .ta-modal-footer button {
+        width: 100%;
+    }
+}
+
+
+@media (max-width: 420px) {
+    .ta-stat-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .ta-stat-content span {
+        font-size: 10px;
+    }
+
+    .ta-stat-content strong {
+        font-size: 17px;
+    }
+
+    .ta-applicant {
+        min-width: 150px;
+    }
+}

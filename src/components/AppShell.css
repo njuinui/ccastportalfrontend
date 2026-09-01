@@ -1,0 +1,1657 @@
+/* ============================================================
+   CCAST APPSHELL — PREMIUM TOP NAVBAR
+   ============================================================ */
+
+/* ------------------------------------------------------------
+   ROOT / VARIABLES
+   ------------------------------------------------------------ */
+
+.app-shell {
+  --nav-height: 76px;
+  --nav-bg: #ffffff;
+  --nav-border: #e7ebf2;
+  --nav-text: #172033;
+  --nav-muted: #6b7890;
+  --nav-soft: #f6f8fb;
+  --nav-hover: #f1f5fb;
+  --nav-active: #eaf2ff;
+  --nav-shadow: 0 1px 0 rgba(15, 23, 42, 0.03);
+  --nav-radius: 14px;
+}
+
+
+/* ------------------------------------------------------------
+   MAIN TOPBAR
+   ------------------------------------------------------------ */
+
+.app-topbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+
+  width: 100%;
+  min-height: var(--nav-height);
+  height: var(--nav-height);
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0 28px;
+
+  background: var(--nav-bg);
+  border-bottom: 1px solid var(--nav-border);
+
+  box-shadow: var(--nav-shadow);
+
+  isolation: isolate;
+}
+
+
+/* ------------------------------------------------------------
+   LEFT SIDE
+   ------------------------------------------------------------ */
+
+.app-topbar-left {
+  min-width: 0;
+
+  display: flex;
+  align-items: center;
+  gap: 14px;
+
+  flex: 1;
+}
+
+
+/* ------------------------------------------------------------
+   HAMBURGER
+   ------------------------------------------------------------ */
+
+.app-topbar-hamburger {
+  width: 42px;
+  height: 42px;
+
+  display: none;
+  align-items: center;
+  justify-content: center;
+
+  flex: 0 0 auto;
+
+  padding: 0;
+  border: 1px solid var(--nav-border);
+  border-radius: 12px;
+
+  background: #fff;
+  color: var(--nav-text);
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.app-topbar-hamburger:hover {
+  background: var(--nav-hover);
+  border-color: #d6deea;
+  color: var(--accent-color);
+}
+
+.app-topbar-hamburger:active {
+  transform: scale(0.96);
+}
+
+
+/* ------------------------------------------------------------
+   BRAND / SIDEBAR CLOSE
+   ------------------------------------------------------------ */
+
+.app-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  min-width: 0;
+  padding: 16px;
+}
+
+.app-logo {
+  flex: 0 0 auto;
+
+  width: 44px;
+  height: 44px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 0;
+  border-radius: 12px;
+
+  color: #fff;
+  cursor: pointer;
+}
+
+.app-logo .material-symbols-outlined {
+  font-size: 24px;
+}
+
+.app-brand-copy {
+  min-width: 0;
+  flex: 1;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  padding: 0;
+  border: 0;
+  background: transparent;
+
+  text-align: left;
+  cursor: pointer;
+}
+
+.app-brand-name,
+.app-brand-tag {
+  max-width: 100%;
+
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.app-brand-name {
+  color: #fff;
+
+  font-size: 15px;
+  font-weight: 750;
+  line-height: 1.25;
+}
+
+.app-brand-tag {
+  margin-top: 2px;
+
+  color: rgba(255, 255, 255, 0.6);
+
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.app-sidebar-close {
+  display: none;
+
+  flex: 0 0 auto;
+
+  width: 36px;
+  height: 36px;
+
+  align-items: center;
+  justify-content: center;
+
+  border: 0;
+  border-radius: 10px;
+
+  background: transparent;
+  color: rgba(255, 255, 255, 0.7);
+
+  cursor: pointer;
+
+  transition:
+    background 0.16s ease,
+    color 0.16s ease;
+}
+
+.app-sidebar-close:hover {
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+}
+
+.app-sidebar-close .material-symbols-outlined {
+  font-size: 20px;
+}
+
+
+/* ------------------------------------------------------------
+   PAGE TITLE / BREADCRUMB
+   ------------------------------------------------------------ */
+
+.app-topbar-page {
+  min-width: 0;
+  flex: 1 1 auto;
+
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  margin-right: 2px;
+
+  overflow: hidden;
+}
+
+.app-topbar-breadcrumb {
+  position: relative;
+
+  display: inline-flex;
+  align-items: center;
+
+  min-width: 0;
+  max-width: 100%;
+
+  overflow: hidden;
+
+  color: #111827;
+
+  font-size: 20px;
+  font-weight: 750;
+  line-height: 1;
+
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  letter-spacing: -0.02em;
+}
+
+.app-topbar-page-description {
+  display: none;
+
+  color: var(--nav-muted);
+
+  font-size: 13px;
+  font-weight: 500;
+
+  white-space: nowrap;
+}
+
+
+/* ------------------------------------------------------------
+   ACADEMIC YEAR / TERM PILL
+   ------------------------------------------------------------ */
+
+.app-topbar-pill-wrap {
+  position: relative;
+  flex: 0 0 auto;
+}
+
+.app-topbar-pill {
+  height: 50px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+
+  min-width: 146px;
+  padding: 0 15px;
+
+  border: 1px solid #dfe6f0;
+  border-radius: 13px;
+
+  background: #f8fafd;
+  color: #26364d;
+
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 650;
+
+  white-space: nowrap;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    transform 0.2s ease;
+}
+
+.app-topbar-pill:hover {
+  background: #ffffff;
+  border-color: #cbd7e7;
+
+  box-shadow:
+    0 4px 12px rgba(15, 23, 42, 0.06);
+}
+
+.app-topbar-pill:focus-visible {
+  outline: none;
+  border-color: var(--accent-color);
+
+  box-shadow:
+    0 0 0 3px color-mix(
+      in srgb,
+      var(--accent-color) 15%,
+      transparent
+    );
+}
+
+.app-topbar-pill > .material-symbols-outlined {
+  font-size: 20px;
+  color: #68809e;
+}
+
+.app-topbar-pill > .material-symbols-outlined:last-child {
+  font-size: 20px;
+  margin-left: auto;
+}
+
+
+/* ------------------------------------------------------------
+   DROPDOWN MENUS
+   ------------------------------------------------------------ */
+
+.app-topbar-pill-menu {
+  position: absolute;
+  top: calc(100% + 9px);
+  left: 0;
+
+  min-width: 190px;
+
+  padding: 7px;
+
+  background: #ffffff;
+
+  border: 1px solid #e4e9f1;
+  border-radius: 14px;
+
+  box-shadow:
+    0 18px 45px rgba(15, 23, 42, 0.12),
+    0 3px 10px rgba(15, 23, 42, 0.05);
+
+  z-index: 1200;
+
+  animation: appMenuIn 0.16s ease-out;
+}
+
+.app-topbar-pill-menu button {
+  width: 100%;
+  min-height: 42px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+
+  padding: 9px 11px;
+
+  border: 0;
+  border-radius: 9px;
+
+  background: transparent;
+  color: #334155;
+
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 550;
+
+  text-align: left;
+
+  cursor: pointer;
+
+  transition:
+    background 0.16s ease,
+    color 0.16s ease;
+}
+
+.app-topbar-pill-menu button:hover {
+  background: #f3f6fa;
+  color: var(--accent-color);
+}
+
+.app-topbar-pill-menu button.active {
+  background: var(--nav-active);
+  color: var(--accent-color);
+  font-weight: 700;
+}
+
+.app-topbar-pill-menu button .material-symbols-outlined {
+  font-size: 18px;
+}
+
+
+/* ------------------------------------------------------------
+   SEARCH
+   ------------------------------------------------------------ */
+
+.app-topbar-search {
+  position: relative;
+
+  width: min(340px, 28vw);
+  min-width: 230px;
+  height: 50px;
+
+  display: flex;
+  align-items: center;
+
+  margin-left: 2px;
+
+  border: 1px solid #dfe6f0;
+  border-radius: 14px;
+
+  background: #f8fafd;
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.app-topbar-search:focus-within {
+  background: #ffffff;
+  border-color: color-mix(
+    in srgb,
+    var(--accent-color) 55%,
+    #dfe6f0
+  );
+
+  box-shadow:
+    0 0 0 4px color-mix(
+      in srgb,
+      var(--accent-color) 10%,
+      transparent
+    );
+}
+
+.app-topbar-search > .material-symbols-outlined {
+  flex: 0 0 auto;
+
+  margin-left: 15px;
+
+  color: #8295ad;
+  font-size: 23px;
+}
+
+.app-topbar-search input {
+  width: 100%;
+  height: 100%;
+
+  padding: 0 12px;
+
+  border: 0 !important;
+  outline: 0 !important;
+
+  background: transparent !important;
+
+  color: #1e293b;
+
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 500;
+
+  box-shadow: none !important;
+}
+
+.app-topbar-search input::placeholder {
+  color: #91a0b5;
+  opacity: 1;
+}
+
+.app-topbar-search input::-webkit-search-cancel-button {
+  display: none;
+}
+
+.app-search-shortcut {
+  width: 26px;
+  height: 26px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  flex: 0 0 auto;
+
+  margin-right: 10px;
+
+  border: 1px solid #dbe3ee;
+  border-radius: 7px;
+
+  background: #ffffff;
+  color: #60738e;
+
+  font-size: 14px;
+  font-weight: 700;
+
+  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04);
+}
+
+
+/* ------------------------------------------------------------
+   TODAY WIDGET
+   ------------------------------------------------------------ */
+
+.app-topbar-today {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  padding-left: 4px;
+}
+
+.app-topbar-today > .material-symbols-outlined {
+  width: 40px;
+  height: 40px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 11px;
+
+  background: #f1f5fa;
+  color: var(--accent-color);
+
+  font-size: 20px;
+}
+
+.app-topbar-today-label {
+  color: #8491a5;
+
+  font-size: 11px;
+  font-weight: 700;
+
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+}
+
+.app-topbar-today-date {
+  margin-top: 2px;
+
+  color: #29364a;
+
+  font-size: 13px;
+  font-weight: 650;
+}
+
+
+/* ------------------------------------------------------------
+   RIGHT SIDE
+   ------------------------------------------------------------ */
+
+.app-topbar-right {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+
+  flex: 0 0 auto;
+
+  margin-left: 20px;
+}
+
+
+/* ------------------------------------------------------------
+   ICON BUTTONS
+   ------------------------------------------------------------ */
+
+.app-topbar-icon,
+.app-notif-btn {
+  position: relative;
+
+  width: 44px;
+  height: 44px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0;
+
+  border: 1px solid transparent;
+  border-radius: 12px;
+
+  background: transparent;
+  color: #58708d;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.app-topbar-icon:hover,
+.app-notif-btn:hover,
+.app-notif-btn.active {
+  background: #f3f6fa;
+  border-color: #e7ecf3;
+  color: var(--accent-color);
+}
+
+.app-topbar-icon:active,
+.app-notif-btn:active {
+  transform: scale(0.94);
+}
+
+.app-topbar-icon .material-symbols-outlined,
+.app-notif-btn .material-symbols-outlined {
+  font-size: 23px;
+  line-height: 1;
+}
+
+
+/* ------------------------------------------------------------
+   LANGUAGE
+   ------------------------------------------------------------ */
+
+.app-lang-wrap {
+  position: relative;
+}
+
+.app-lang-btn {
+  width: auto;
+  min-width: 44px;
+
+  padding: 0 10px;
+}
+
+.app-lang-label {
+  margin-left: 2px;
+
+  color: #53667f;
+
+  font-size: 13px;
+  font-weight: 650;
+}
+
+.app-lang-chevron {
+  margin-left: 1px;
+  font-size: 18px !important;
+}
+
+.app-lang-menu {
+  left: auto;
+  right: 0;
+
+  min-width: 155px;
+}
+
+
+/* ------------------------------------------------------------
+   NOTIFICATION BADGE
+   ------------------------------------------------------------ */
+
+.app-notif-dot {
+  position: absolute;
+  top: 5px;
+  right: 4px;
+
+  min-width: 18px;
+  height: 18px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0 4px;
+
+  border: 2px solid #ffffff;
+  border-radius: 999px;
+
+  background: #ef4444;
+  color: #ffffff;
+
+  font-size: 9px;
+  font-weight: 800;
+
+  line-height: 1;
+}
+
+
+/* ------------------------------------------------------------
+   NOTIFICATION DROPDOWN
+   ------------------------------------------------------------ */
+
+.app-notif-wrap {
+  position: relative;
+}
+
+.app-notif-drop {
+  position: absolute;
+  top: calc(100% + 10px);
+  right: 0;
+
+  width: min(410px, calc(100vw - 30px));
+  max-height: min(600px, calc(100vh - 100px));
+
+  display: flex;
+  flex-direction: column;
+
+  overflow: hidden;
+
+  background: #ffffff;
+
+  border: 1px solid #e4e9f1;
+  border-radius: 17px;
+
+  box-shadow:
+    0 24px 55px rgba(15, 23, 42, 0.14),
+    0 5px 15px rgba(15, 23, 42, 0.06);
+
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-7px) scale(0.98);
+
+  pointer-events: none;
+
+  transition:
+    opacity 0.18s ease,
+    visibility 0.18s ease,
+    transform 0.18s ease;
+
+  z-index: 1300;
+}
+
+.app-notif-drop.open {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0) scale(1);
+  pointer-events: auto;
+}
+
+.app-notif-drop-hd {
+  min-height: 68px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 13px 17px;
+
+  border-bottom: 1px solid #edf0f5;
+}
+
+.app-notif-drop-hd strong {
+  display: block;
+
+  color: #182235;
+
+  font-size: 15px;
+  font-weight: 750;
+}
+
+.app-notif-header-count {
+  display: block;
+
+  margin-top: 3px;
+
+  color: #8491a5;
+
+  font-size: 11px;
+  font-weight: 550;
+}
+
+.app-notif-drop-hd > button {
+  padding: 7px 9px;
+
+  border: 0;
+  border-radius: 8px;
+
+  background: transparent;
+  color: var(--accent-color);
+
+  font-family: inherit;
+  font-size: 11px;
+  font-weight: 700;
+
+  cursor: pointer;
+}
+
+.app-notif-drop-hd > button:hover {
+  background: #eef4ff;
+}
+
+.app-notif-list {
+  overflow-y: auto;
+}
+
+.app-notif-item {
+  width: 100%;
+
+  display: flex;
+  align-items: flex-start;
+  gap: 11px;
+
+  padding: 13px 16px;
+
+  border: 0;
+  border-bottom: 1px solid #f0f2f6;
+
+  background: #ffffff;
+  color: inherit;
+
+  font-family: inherit;
+
+  text-align: left;
+
+  cursor: pointer;
+
+  transition: background 0.16s ease;
+}
+
+.app-notif-item:hover {
+  background: #f8faff;
+}
+
+.app-notif-item.unread {
+  background: #f7faff;
+}
+
+.app-notif-item-ic {
+  width: 38px;
+  height: 38px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex: 0 0 auto;
+
+  border-radius: 11px;
+}
+
+.app-notif-item-ic .material-symbols-outlined {
+  font-size: 20px;
+}
+
+.app-notif-item-body {
+  min-width: 0;
+  flex: 1;
+}
+
+.app-notif-item-title {
+  color: #1e293b;
+
+  font-size: 13px;
+  font-weight: 700;
+
+  line-height: 1.35;
+}
+
+.app-notif-item-t {
+  margin-top: 3px;
+
+  color: #718096;
+
+  font-size: 12px;
+  line-height: 1.45;
+
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+
+  overflow: hidden;
+}
+
+.app-notif-item-side {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 7px;
+
+  flex: 0 0 auto;
+}
+
+.app-notif-item-when {
+  color: #9aa6b7;
+
+  font-size: 10px;
+  font-weight: 600;
+
+  white-space: nowrap;
+}
+
+.app-notif-item-unread-dot {
+  width: 7px;
+  height: 7px;
+
+  border-radius: 50%;
+
+  background: var(--accent-color);
+}
+
+.app-notif-empty {
+  min-height: 150px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+
+  padding: 25px;
+
+  color: #8491a5;
+
+  text-align: center;
+  font-size: 12px;
+}
+
+.app-notif-empty strong {
+  color: #344054;
+  font-size: 13px;
+}
+
+.app-notif-empty-spin {
+  animation: appSpin 1s linear infinite;
+}
+
+.app-notif-footer {
+  padding: 10px;
+
+  border-top: 1px solid #edf0f5;
+}
+
+.app-notif-footer button {
+  width: 100%;
+  min-height: 38px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+
+  border: 0;
+  border-radius: 9px;
+
+  background: #f4f7fb;
+  color: var(--accent-color);
+
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition: background 0.16s ease;
+}
+
+.app-notif-footer button:hover {
+  background: #eaf2ff;
+}
+
+
+/* ------------------------------------------------------------
+   DIVIDER
+   ------------------------------------------------------------ */
+
+.app-topbar-divider {
+  width: 1px;
+  height: 30px;
+
+  margin: 0 7px;
+
+  background: #e4e8ee;
+}
+
+
+/* ------------------------------------------------------------
+   PROFILE
+   ------------------------------------------------------------ */
+
+.app-profile-wrap {
+  position: relative;
+}
+
+.app-topbar-user {
+  min-width: 190px;
+  height: 52px;
+
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  padding: 5px 9px 5px 12px;
+
+  border: 1px solid transparent !important;
+  border-radius: 13px !important;
+
+  outline: none !important;
+
+  background: transparent !important;
+  color: inherit;
+
+  font-family: inherit;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.app-topbar-user:hover,
+.app-topbar-user.active {
+  background: #f5f7fa !important;
+  border-color: #e6ebf2 !important;
+  box-shadow: none !important;
+}
+
+.app-topbar-user-info {
+  min-width: 0;
+
+  flex: 1;
+
+  text-align: right;
+}
+
+.app-topbar-user-name {
+  overflow: hidden;
+
+  color: #182235;
+
+  font-size: 14px;
+  font-weight: 750;
+
+  line-height: 1.2;
+
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.app-topbar-user-role {
+  margin-top: 3px;
+
+  color: var(--accent-color);
+
+  font-size: 11px;
+  font-weight: 650;
+
+  line-height: 1.2;
+}
+
+.app-avatar {
+  flex: 0 0 auto;
+
+  border: 2px solid #e5ebf3;
+  box-shadow:
+    0 2px 7px rgba(15, 23, 42, 0.10);
+}
+
+.app-profile-chevron {
+  color: #63748a;
+  font-size: 20px;
+
+  transition: transform 0.2s ease;
+}
+
+.app-topbar-user.active .app-profile-chevron {
+  transform: rotate(180deg);
+}
+
+
+/* ------------------------------------------------------------
+   PROFILE DROPDOWN
+   ------------------------------------------------------------ */
+
+.app-profile-menu {
+  position: absolute;
+  top: calc(100% + 10px);
+  right: 0;
+
+  width: 255px;
+
+  padding: 8px;
+
+  background: #ffffff;
+
+  border: 1px solid #e4e9f1;
+  border-radius: 16px;
+
+  box-shadow:
+    0 22px 50px rgba(15, 23, 42, 0.13),
+    0 4px 12px rgba(15, 23, 42, 0.05);
+
+  z-index: 1300;
+
+  animation: appMenuIn 0.16s ease-out;
+}
+
+.app-profile-menu-head {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+
+  padding: 9px 8px 13px;
+}
+
+.app-profile-menu-head > div {
+  min-width: 0;
+}
+
+.app-profile-menu-head strong {
+  display: block;
+
+  overflow: hidden;
+
+  color: #172033;
+
+  font-size: 13px;
+  font-weight: 750;
+
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.app-profile-menu-head span {
+  display: block;
+
+  margin-top: 3px;
+
+  overflow: hidden;
+
+  color: #8793a5;
+
+  font-size: 11px;
+  font-weight: 500;
+
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.app-profile-menu-divider {
+  height: 1px;
+
+  margin: 2px 4px 6px;
+
+  background: #edf0f4;
+}
+
+.app-profile-menu > button {
+  width: 100%;
+  min-height: 42px;
+
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  padding: 9px 10px;
+
+  border: 0;
+  border-radius: 9px;
+
+  background: transparent;
+  color: #42516a;
+
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 600;
+
+  text-align: left;
+
+  cursor: pointer;
+
+  transition:
+    background 0.16s ease,
+    color 0.16s ease;
+}
+
+.app-profile-menu > button:hover {
+  background: #f3f6fa;
+  color: var(--accent-color);
+}
+
+.app-profile-menu > button .material-symbols-outlined {
+  width: 22px;
+
+  color: #73839a;
+  font-size: 20px;
+}
+
+.app-profile-menu > button:hover .material-symbols-outlined {
+  color: var(--accent-color);
+}
+
+.app-profile-menu > button.danger {
+  color: #dc3545;
+}
+
+.app-profile-menu > button.danger:hover {
+  background: #fff1f2;
+  color: #dc3545;
+}
+
+.app-profile-menu > button.danger .material-symbols-outlined {
+  color: #dc3545;
+}
+
+
+/* ------------------------------------------------------------
+   MOBILE SEARCH
+   ------------------------------------------------------------ */
+
+.app-topbar-search-mobile {
+  position: relative;
+  z-index: 950;
+
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+
+  padding: 10px 16px;
+
+  background: #ffffff;
+  border-bottom: 1px solid #e7ebf2;
+
+  box-shadow:
+    0 5px 15px rgba(15, 23, 42, 0.05);
+}
+
+.app-topbar-search-mobile > .material-symbols-outlined {
+  margin-left: 3px;
+
+  color: #8091a8;
+  font-size: 22px;
+}
+
+.app-topbar-search-mobile input {
+  flex: 1;
+
+  height: 44px;
+
+  padding: 0 11px;
+
+  border: 0 !important;
+  outline: 0 !important;
+
+  background: transparent !important;
+
+  color: #1e293b;
+
+  font-family: inherit;
+  font-size: 14px;
+
+  box-shadow: none !important;
+}
+
+.app-topbar-search-mobile button {
+  width: 38px;
+  height: 38px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 0;
+  border-radius: 9px;
+
+  background: #f3f6fa;
+  color: #64748b;
+
+  cursor: pointer;
+}
+
+.app-topbar-search-mobile button:hover {
+  background: #eaf0f7;
+}
+
+
+/* ============================================================
+   DARK MODE
+   ============================================================ */
+
+html.dark .app-topbar,
+.dark .app-topbar {
+  --nav-bg: #111827;
+  --nav-border: #253047;
+  --nav-text: #f1f5f9;
+  --nav-muted: #94a3b8;
+  --nav-soft: #182235;
+  --nav-hover: #1c293d;
+  --nav-active: rgba(59, 130, 246, 0.14);
+
+  background: #111827;
+  border-bottom-color: #253047;
+}
+
+html.dark .app-topbar-breadcrumb,
+.dark .app-topbar-breadcrumb {
+  color: #f8fafc;
+}
+
+html.dark .app-topbar-pill,
+.dark .app-topbar-pill,
+html.dark .app-topbar-search,
+.dark .app-topbar-search {
+  background: #182235;
+  border-color: #2b3850;
+  color: #e5edf8;
+}
+
+html.dark .app-topbar-pill:hover,
+.dark .app-topbar-pill:hover,
+html.dark .app-topbar-search:focus-within,
+.dark .app-topbar-search:focus-within {
+  background: #1c293d;
+  border-color: #3b4a63;
+}
+
+html.dark .app-topbar-search input,
+.dark .app-topbar-search input {
+  color: #f1f5f9;
+}
+
+html.dark .app-topbar-search input::placeholder,
+.dark .app-topbar-search input::placeholder {
+  color: #718096;
+}
+
+html.dark .app-topbar-icon:hover,
+.dark .app-topbar-icon:hover,
+html.dark .app-notif-btn:hover,
+.dark .app-notif-btn:hover,
+html.dark .app-notif-btn.active,
+.dark .app-notif-btn.active,
+html.dark .app-topbar-user:hover,
+.dark .app-topbar-user:hover,
+html.dark .app-topbar-user.active,
+.dark .app-topbar-user.active {
+  background: #1c293d !important;
+  border-color: #2b3850 !important;
+}
+
+html.dark .app-topbar-user-name,
+.dark .app-topbar-user-name {
+  color: #f1f5f9;
+}
+
+html.dark .app-topbar-user-role,
+.dark .app-topbar-user-role {
+  color: #8eb7ff;
+}
+
+html.dark .app-profile-menu,
+.dark .app-profile-menu,
+html.dark .app-notif-drop,
+.dark .app-notif-drop,
+html.dark .app-topbar-pill-menu,
+.dark .app-topbar-pill-menu {
+  background: #151f30;
+  border-color: #29364d;
+  box-shadow:
+    0 24px 55px rgba(0, 0, 0, 0.35);
+}
+
+html.dark .app-topbar-pill-menu button,
+.dark .app-topbar-pill-menu button,
+html.dark .app-profile-menu > button,
+.dark .app-profile-menu > button {
+  color: #cbd5e1;
+}
+
+html.dark .app-topbar-pill-menu button:hover,
+.dark .app-topbar-pill-menu button:hover,
+html.dark .app-profile-menu > button:hover,
+.dark .app-profile-menu > button:hover {
+  background: #1e2a3d;
+}
+
+html.dark .app-profile-menu-head strong,
+.dark .app-profile-menu-head strong,
+html.dark .app-notif-drop-hd strong,
+.dark .app-notif-drop-hd strong {
+  color: #f1f5f9;
+}
+
+html.dark .app-notif-item,
+.dark .app-notif-item {
+  background: #151f30;
+  border-bottom-color: #253047;
+}
+
+html.dark .app-notif-item:hover,
+.dark .app-notif-item:hover,
+html.dark .app-notif-item.unread,
+.dark .app-notif-item.unread {
+  background: #19263a;
+}
+
+html.dark .app-notif-item-title,
+.dark .app-notif-item-title {
+  color: #e5edf8;
+}
+
+html.dark .app-topbar-divider,
+.dark .app-topbar-divider {
+  background: #2b3850;
+}
+
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+
+@media (max-width: 1500px) {
+  .app-topbar {
+    padding: 0 22px;
+  }
+
+  .app-topbar-search {
+    width: min(310px, 25vw);
+  }
+}
+
+
+@media (max-width: 1200px) {
+  .app-topbar {
+    padding: 0 18px;
+  }
+
+  .app-topbar-left {
+    gap: 10px;
+  }
+
+  .app-topbar-right {
+    margin-left: 12px;
+  }
+
+  .app-topbar-pill {
+    min-width: 135px;
+  }
+
+  .app-topbar-search {
+    min-width: 210px;
+  }
+
+  .app-topbar-user {
+    min-width: 165px;
+  }
+}
+
+
+@media (max-width: 991.98px) {
+  .app-topbar {
+    min-height: 68px;
+    height: 68px;
+
+    padding: 0 15px;
+  }
+
+  .app-topbar-hamburger {
+    display: inline-flex;
+  }
+
+  .app-sidebar-close {
+    display: inline-flex;
+  }
+
+  .app-topbar-breadcrumb {
+    font-size: 17px;
+  }
+
+  .app-topbar-page {
+    flex: 1;
+  }
+
+  .app-topbar-right {
+    margin-left: 8px;
+  }
+
+  .app-topbar-user {
+    min-width: auto;
+    width: auto;
+    padding-left: 6px;
+  }
+
+  .app-profile-chevron {
+    display: none;
+  }
+}
+
+
+@media (max-width: 767.98px) {
+  .app-topbar {
+    padding: 0 12px;
+  }
+
+  .app-topbar-left {
+    gap: 8px;
+  }
+
+  .app-topbar-breadcrumb {
+    font-size: 16px;
+  }
+
+  .app-topbar-right {
+    gap: 2px;
+  }
+
+  .app-topbar-icon,
+  .app-notif-btn {
+    width: 40px;
+    height: 40px;
+  }
+
+  .app-topbar-user {
+    height: 46px;
+  }
+
+  .app-profile-menu {
+    right: -4px;
+  }
+}
+
+
+@media (max-width: 575.98px) {
+  .app-topbar {
+    min-height: 62px;
+    height: 62px;
+
+    padding: 0 9px;
+  }
+
+  .app-topbar-hamburger {
+    width: 38px;
+    height: 38px;
+  }
+
+  .app-topbar-breadcrumb {
+    max-width: 145px;
+
+    overflow: hidden;
+
+    font-size: 15px;
+
+    text-overflow: ellipsis;
+  }
+
+  .app-topbar-right {
+    margin-left: 3px;
+  }
+
+  .app-topbar-icon,
+  .app-notif-btn {
+    width: 37px;
+    height: 37px;
+  }
+
+  .app-topbar-icon .material-symbols-outlined,
+  .app-notif-btn .material-symbols-outlined {
+    font-size: 21px;
+  }
+
+  .app-topbar-user {
+    padding: 3px;
+  }
+
+  .app-avatar {
+    border-width: 1.5px;
+  }
+
+  .app-notif-drop {
+    position: fixed;
+    top: 68px;
+    left: 10px;
+    right: 10px;
+
+    width: auto;
+
+    max-height: calc(100vh - 82px);
+  }
+
+  .app-profile-menu {
+    position: fixed;
+    top: 68px;
+    left: 10px;
+    right: 10px;
+
+    width: auto;
+  }
+}
+
+
+/* ============================================================
+   ACCESSIBILITY
+   ============================================================ */
+
+.app-topbar button:focus-visible,
+.app-topbar input:focus-visible {
+  outline: 3px solid color-mix(
+    in srgb,
+    var(--accent-color) 20%,
+    transparent
+  );
+
+  outline-offset: 2px;
+}
+
+
+/* ============================================================
+   ANIMATIONS
+   ============================================================ */
+
+@keyframes appMenuIn {
+  from {
+    opacity: 0;
+    transform: translateY(-6px) scale(0.98);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes appSpin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+/* ============================================================
+   REDUCE MOTION
+   ============================================================ */
+
+@media (prefers-reduced-motion: reduce) {
+  .app-topbar *,
+  .app-profile-menu,
+  .app-notif-drop {
+    animation: none !important;
+    transition: none !important;
+  }
+}

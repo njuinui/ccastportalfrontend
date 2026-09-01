@@ -1,0 +1,1514 @@
+/* ============================================================
+   CCAST SCHOOL MANAGEMENT SYSTEM
+   VACANCY FORM
+   PRODUCT-READY ADMIN UI
+============================================================ */
+
+
+/* ============================================================
+   DESIGN TOKENS
+============================================================ */
+
+.vacancy-form-page {
+    --vf-primary: #6d3df5;
+    --vf-primary-dark: #5b2dd8;
+    --vf-primary-soft: #f1edff;
+
+    --vf-blue: #2563eb;
+    --vf-blue-soft: #eff6ff;
+
+    --vf-green: #059669;
+    --vf-green-soft: #ecfdf5;
+
+    --vf-orange: #d97706;
+    --vf-orange-soft: #fff7ed;
+
+    --vf-red: #dc2626;
+    --vf-red-soft: #fef2f2;
+
+    --vf-text: #172033;
+    --vf-text-soft: #52627a;
+    --vf-muted: #7b879a;
+
+    --vf-border: #e5e9f1;
+    --vf-border-dark: #d8dee9;
+
+    --vf-surface: #ffffff;
+    --vf-background: #f6f8fc;
+
+    --vf-radius: 18px;
+    --vf-radius-sm: 12px;
+
+    --vf-shadow:
+        0 1px 2px rgba(16, 24, 40, 0.03),
+        0 8px 30px rgba(16, 24, 40, 0.04);
+
+    width: 100%;
+    min-height: 100%;
+    padding: 32px;
+    background: var(--vf-background);
+    color: var(--vf-text);
+    box-sizing: border-box;
+}
+
+
+/* ============================================================
+   PAGE HEADER
+============================================================ */
+
+.vacancy-form-header {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 32px;
+    margin-bottom: 28px;
+}
+
+.vacancy-header-left {
+    min-width: 0;
+}
+
+.vacancy-breadcrumb {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 7px;
+    margin-bottom: 20px;
+
+    color: var(--vf-muted);
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.vacancy-breadcrumb a {
+    color: #596780;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.vacancy-breadcrumb a:hover {
+    color: var(--vf-primary);
+}
+
+.vacancy-breadcrumb .material-symbols-rounded {
+    font-size: 17px;
+    color: #a0aabd;
+}
+
+.vacancy-title-row {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+.vacancy-page-icon {
+    width: 68px;
+    height: 68px;
+
+    flex: 0 0 68px;
+
+    display: grid;
+    place-items: center;
+
+    border: 1px solid #dfd6ff;
+    border-radius: 18px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #f3efff,
+            #e8ddff
+        );
+
+    color: var(--vf-primary);
+
+    box-shadow:
+        0 10px 30px rgba(109, 61, 245, 0.12);
+}
+
+.vacancy-page-icon .material-symbols-rounded {
+    font-size: 32px;
+}
+
+.vacancy-title-kicker {
+    display: block;
+    margin-bottom: 5px;
+
+    color: var(--vf-primary);
+
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+}
+
+.vacancy-title-row h1 {
+    margin: 0;
+
+    color: #121a2c;
+
+    font-size: clamp(
+        28px,
+        3vw,
+        38px
+    );
+
+    line-height: 1.1;
+    font-weight: 800;
+    letter-spacing: -0.035em;
+}
+
+.vacancy-title-row p {
+    margin: 9px 0 0;
+
+    max-width: 680px;
+
+    color: var(--vf-text-soft);
+
+    font-size: 15px;
+    line-height: 1.65;
+}
+
+.vacancy-header-actions {
+    flex-shrink: 0;
+}
+
+.vacancy-back-button {
+    min-height: 46px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+
+    padding: 0 17px;
+
+    border: 1px solid var(--vf-border);
+    border-radius: 12px;
+
+    background: #ffffff;
+    color: #43516a;
+
+    text-decoration: none;
+
+    font-size: 14px;
+    font-weight: 700;
+
+    box-shadow: 0 2px 7px rgba(16, 24, 40, 0.03);
+
+    transition:
+        transform 0.2s ease,
+        border-color 0.2s ease,
+        color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.vacancy-back-button:hover {
+    color: var(--vf-primary);
+    border-color: #cfc4ff;
+
+    transform: translateY(-1px);
+
+    box-shadow:
+        0 8px 20px rgba(16, 24, 40, 0.07);
+}
+
+.vacancy-back-button .material-symbols-rounded {
+    font-size: 19px;
+}
+
+
+/* ============================================================
+   ERROR ALERT
+============================================================ */
+
+.vacancy-form-alert {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+
+    margin-bottom: 24px;
+    padding: 16px 18px;
+
+    border: 1px solid #fecaca;
+    border-radius: 14px;
+
+    background: var(--vf-red-soft);
+    color: #991b1b;
+
+    box-shadow:
+        0 5px 20px rgba(220, 38, 38, 0.05);
+}
+
+.vacancy-alert-icon {
+    width: 38px;
+    height: 38px;
+
+    flex: 0 0 38px;
+
+    display: grid;
+    place-items: center;
+
+    border-radius: 11px;
+
+    background: #fee2e2;
+    color: var(--vf-red);
+}
+
+.vacancy-alert-icon .material-symbols-rounded {
+    font-size: 21px;
+}
+
+.vacancy-form-alert strong {
+    display: block;
+    margin-top: 1px;
+
+    font-size: 14px;
+    font-weight: 800;
+}
+
+.vacancy-form-alert p {
+    margin: 3px 0 0;
+
+    color: #b42318;
+
+    font-size: 13px;
+    line-height: 1.55;
+}
+
+.vacancy-form-alert button {
+    width: 34px;
+    height: 34px;
+
+    margin-left: auto;
+
+    flex: 0 0 34px;
+
+    display: grid;
+    place-items: center;
+
+    border: 0;
+    border-radius: 9px;
+
+    background: transparent;
+    color: #b42318;
+
+    cursor: pointer;
+}
+
+.vacancy-form-alert button:hover {
+    background: rgba(220, 38, 38, 0.08);
+}
+
+
+/* ============================================================
+   FORM LAYOUT
+============================================================ */
+
+.vacancy-form-layout {
+    display: grid;
+    grid-template-columns:
+        minmax(0, 1fr)
+        350px;
+
+    align-items: start;
+    gap: 24px;
+
+    width: 100%;
+    max-width: 1500px;
+}
+
+.vacancy-form-main {
+    min-width: 0;
+
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.vacancy-form-sidebar {
+    min-width: 0;
+
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    position: sticky;
+    top: 24px;
+}
+
+
+/* ============================================================
+   CARDS
+============================================================ */
+
+.vacancy-form-card {
+    min-width: 0;
+
+    padding: 25px;
+
+    border: 1px solid var(--vf-border);
+    border-radius: var(--vf-radius);
+
+    background: var(--vf-surface);
+
+    box-shadow: var(--vf-shadow);
+}
+
+.sidebar-card {
+    padding: 21px;
+}
+
+.form-card-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 13px;
+
+    padding-bottom: 21px;
+    margin-bottom: 22px;
+
+    border-bottom: 1px solid #edf0f5;
+}
+
+.form-card-header.compact {
+    padding-bottom: 17px;
+    margin-bottom: 18px;
+}
+
+.form-section-icon {
+    width: 42px;
+    height: 42px;
+
+    flex: 0 0 42px;
+
+    display: grid;
+    place-items: center;
+
+    border-radius: 12px;
+}
+
+.form-section-icon .material-symbols-rounded {
+    font-size: 21px;
+}
+
+.form-section-icon.purple {
+    background: var(--vf-primary-soft);
+    color: var(--vf-primary);
+}
+
+.form-section-icon.blue {
+    background: var(--vf-blue-soft);
+    color: var(--vf-blue);
+}
+
+.form-section-icon.green {
+    background: var(--vf-green-soft);
+    color: var(--vf-green);
+}
+
+.form-section-icon.orange {
+    background: var(--vf-orange-soft);
+    color: var(--vf-orange);
+}
+
+.form-card-header h2 {
+    margin: 1px 0 4px;
+
+    color: #172033;
+
+    font-size: 17px;
+    line-height: 1.3;
+    font-weight: 800;
+    letter-spacing: -0.015em;
+}
+
+.form-card-header p {
+    margin: 0;
+
+    color: var(--vf-muted);
+
+    font-size: 13px;
+    line-height: 1.55;
+}
+
+
+/* ============================================================
+   FORM GRID
+============================================================ */
+
+.form-grid {
+    display: grid;
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 21px 18px;
+}
+
+.form-field {
+    min-width: 0;
+}
+
+.form-field.full {
+    grid-column: 1 / -1;
+}
+
+.form-field label {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+
+    margin-bottom: 8px;
+
+    color: #344054;
+
+    font-size: 13px;
+    font-weight: 750;
+}
+
+.form-field label > span {
+    color: #dc2626;
+}
+
+.form-field small,
+.field-hint {
+    display: block;
+
+    margin-top: 7px;
+
+    color: #8a95a8;
+
+    font-size: 11px;
+    line-height: 1.5;
+}
+
+
+/* ============================================================
+   INPUTS
+============================================================ */
+
+.form-field input,
+.form-field select,
+.form-field textarea {
+    width: 100%;
+    box-sizing: border-box;
+
+    border: 1px solid #dce2eb;
+    border-radius: 11px;
+
+    background: #ffffff;
+    color: #172033;
+
+    font-family: inherit;
+    font-size: 14px;
+
+    outline: none;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease,
+        background 0.2s ease;
+}
+
+.form-field input,
+.form-field select {
+    height: 47px;
+    padding: 0 13px;
+}
+
+.form-field textarea {
+    min-height: 150px;
+
+    padding: 13px 14px;
+
+    resize: vertical;
+
+    line-height: 1.65;
+}
+
+.form-field input::placeholder,
+.form-field textarea::placeholder {
+    color: #a4adbc;
+}
+
+.form-field input:hover,
+.form-field select:hover,
+.form-field textarea:hover {
+    border-color: #c7cfdb;
+}
+
+.form-field input:focus,
+.form-field select:focus,
+.form-field textarea:focus {
+    border-color: var(--vf-primary);
+
+    box-shadow:
+        0 0 0 3px rgba(
+            109,
+            61,
+            245,
+            0.10
+        );
+}
+
+.input-with-icon,
+.select-with-icon {
+    position: relative;
+}
+
+.input-with-icon > .material-symbols-rounded,
+.select-with-icon > .material-symbols-rounded {
+    position: absolute;
+
+    left: 13px;
+    top: 50%;
+
+    z-index: 1;
+
+    transform: translateY(-50%);
+
+    color: #8994a7;
+
+    font-size: 19px;
+
+    pointer-events: none;
+}
+
+.input-with-icon input {
+    padding-left: 42px;
+}
+
+.select-with-icon select {
+    padding-left: 42px;
+}
+
+
+/* ============================================================
+   TEXTAREA FOOTER
+============================================================ */
+
+.textarea-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 15px;
+
+    margin-top: 7px;
+}
+
+.textarea-footer small {
+    margin: 0;
+    max-width: 75%;
+}
+
+.textarea-footer span {
+    flex-shrink: 0;
+
+    color: #9aa4b4;
+
+    font-size: 11px;
+    font-weight: 600;
+}
+
+
+/* ============================================================
+   STATUS OPTIONS
+============================================================ */
+
+.status-options {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.status-option {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    gap: 11px;
+
+    padding: 11px;
+
+    border: 1px solid #e5e9f0;
+    border-radius: 12px;
+
+    background: #ffffff;
+
+    cursor: pointer;
+
+    transition:
+        border-color 0.2s ease,
+        background 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.status-option:hover {
+    border-color: #cfc6ff;
+    background: #fbfaff;
+}
+
+.status-option.selected {
+    border-color: #c9bfff;
+    background: #f8f6ff;
+
+    box-shadow:
+        0 0 0 2px rgba(
+            109,
+            61,
+            245,
+            0.05
+        );
+}
+
+.status-option input {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.status-option-icon {
+    width: 36px;
+    height: 36px;
+
+    flex: 0 0 36px;
+
+    display: grid;
+    place-items: center;
+
+    border-radius: 10px;
+
+    background: #f1f3f7;
+    color: #667085;
+}
+
+.status-option.selected
+.status-option-icon {
+    background: #e9e2ff;
+    color: var(--vf-primary);
+}
+
+.status-option-icon .material-symbols-rounded {
+    font-size: 19px;
+}
+
+.status-option-content {
+    min-width: 0;
+
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.status-option-content strong {
+    color: #273247;
+
+    font-size: 13px;
+    font-weight: 750;
+}
+
+.status-option-content small {
+    color: #8b95a7;
+
+    font-size: 10px;
+    line-height: 1.35;
+}
+
+.status-check {
+    width: 21px;
+    height: 21px;
+
+    margin-left: auto;
+
+    flex: 0 0 21px;
+
+    display: grid;
+    place-items: center;
+
+    border: 1.5px solid #d7dce5;
+    border-radius: 50%;
+
+    color: transparent;
+}
+
+.status-check .material-symbols-rounded {
+    font-size: 14px;
+}
+
+.status-option.selected .status-check {
+    border-color: var(--vf-primary);
+    background: var(--vf-primary);
+    color: #ffffff;
+}
+
+
+/* ============================================================
+   FEATURED TOGGLE
+============================================================ */
+
+.featured-toggle {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    margin-top: 18px;
+    padding-top: 18px;
+
+    border-top: 1px solid #edf0f4;
+
+    cursor: pointer;
+}
+
+.toggle-control {
+    position: relative;
+
+    width: 42px;
+    height: 24px;
+
+    flex: 0 0 42px;
+}
+
+.toggle-control input {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.toggle-slider {
+    position: absolute;
+    inset: 0;
+
+    border-radius: 999px;
+
+    background: #d6dce5;
+
+    transition: background 0.2s ease;
+}
+
+.toggle-slider::after {
+    content: "";
+
+    position: absolute;
+
+    width: 18px;
+    height: 18px;
+
+    top: 3px;
+    left: 3px;
+
+    border-radius: 50%;
+
+    background: #ffffff;
+
+    box-shadow:
+        0 1px 3px rgba(0, 0, 0, 0.18);
+
+    transition:
+        transform 0.2s ease;
+}
+
+.toggle-control input:checked
++ .toggle-slider {
+    background: var(--vf-primary);
+}
+
+.toggle-control input:checked
++ .toggle-slider::after {
+    transform: translateX(18px);
+}
+
+.featured-content {
+    min-width: 0;
+
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.featured-content strong {
+    color: #344054;
+
+    font-size: 13px;
+    font-weight: 750;
+}
+
+.featured-content small {
+    color: #8994a7;
+
+    font-size: 11px;
+    line-height: 1.4;
+}
+
+
+/* ============================================================
+   ICON PREVIEW
+============================================================ */
+
+.icon-preview {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    margin-bottom: 17px;
+    padding: 12px;
+
+    border: 1px solid #eceff4;
+    border-radius: 12px;
+
+    background: #fafbfc;
+}
+
+.icon-preview > div {
+    width: 45px;
+    height: 45px;
+
+    display: grid;
+    place-items: center;
+
+    border-radius: 12px;
+
+    background: var(--vf-primary-soft);
+    color: var(--vf-primary);
+}
+
+.icon-preview .material-symbols-rounded {
+    font-size: 23px;
+}
+
+.icon-preview > span {
+    color: #8994a7;
+
+    font-size: 12px;
+    font-weight: 600;
+}
+
+
+/* ============================================================
+   COMPLETION
+============================================================ */
+
+.completion-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-bottom: 13px;
+}
+
+.completion-header > div {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.completion-header span:first-child {
+    color: #7a879a;
+
+    font-size: 11px;
+    font-weight: 650;
+}
+
+.completion-header strong {
+    color: #172033;
+
+    font-size: 22px;
+    line-height: 1;
+    font-weight: 800;
+}
+
+.completion-header > .material-symbols-rounded {
+    color: var(--vf-primary);
+    font-size: 25px;
+}
+
+.completion-track {
+    width: 100%;
+    height: 7px;
+
+    overflow: hidden;
+
+    border-radius: 999px;
+
+    background: #edf0f5;
+}
+
+.completion-track span {
+    display: block;
+
+    height: 100%;
+
+    border-radius: inherit;
+
+    background:
+        linear-gradient(
+            90deg,
+            #6d3df5,
+            #8c62ff
+        );
+
+    transition: width 0.3s ease;
+}
+
+.vacancy-form-card .completion-header + .completion-track + p {
+    margin: 11px 0 0;
+
+    color: #8a95a8;
+
+    font-size: 11px;
+    line-height: 1.5;
+}
+
+
+/* ============================================================
+   ACTIONS
+============================================================ */
+
+.vacancy-form-actions {
+    display: grid;
+    grid-template-columns:
+        minmax(0, 1fr)
+        minmax(0, 1.5fr);
+
+    gap: 9px;
+
+    position: sticky;
+    bottom: 15px;
+
+    padding: 13px;
+
+    border: 1px solid var(--vf-border);
+    border-radius: 15px;
+
+    background: rgba(
+        255,
+        255,
+        255,
+        0.94
+    );
+
+    box-shadow:
+        0 12px 35px rgba(
+            16,
+            24,
+            40,
+            0.10
+        );
+
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+
+    z-index: 10;
+}
+
+.vacancy-cancel-button,
+.vacancy-save-button {
+    min-height: 45px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+
+    border-radius: 10px;
+
+    font-size: 13px;
+    font-weight: 750;
+
+    text-decoration: none;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        background 0.2s ease,
+        border-color 0.2s ease;
+}
+
+.vacancy-cancel-button {
+    border: 1px solid #dce2eb;
+
+    background: #ffffff;
+    color: #596780;
+}
+
+.vacancy-cancel-button:hover {
+    border-color: #cbd2de;
+    color: #29364b;
+
+    transform: translateY(-1px);
+}
+
+.vacancy-save-button {
+    border: 1px solid var(--vf-primary);
+
+    background:
+        linear-gradient(
+            135deg,
+            #7545fa,
+            #6532ed
+        );
+
+    color: #ffffff;
+
+    box-shadow:
+        0 8px 18px rgba(
+            109,
+            61,
+            245,
+            0.22
+        );
+}
+
+.vacancy-save-button:hover:not(:disabled) {
+    transform: translateY(-1px);
+
+    box-shadow:
+        0 12px 25px rgba(
+            109,
+            61,
+            245,
+            0.28
+        );
+}
+
+.vacancy-save-button:disabled {
+    opacity: 0.65;
+    cursor: not-allowed;
+}
+
+.vacancy-save-button .material-symbols-rounded,
+.vacancy-cancel-button .material-symbols-rounded {
+    font-size: 18px;
+}
+
+
+/* ============================================================
+   LOADING
+============================================================ */
+
+.vacancy-form-loading {
+    min-height: 300px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+
+    padding: 30px;
+
+    border: 1px solid var(--vf-border);
+    border-radius: var(--vf-radius);
+
+    background: #ffffff;
+
+    box-shadow: var(--vf-shadow);
+}
+
+.vacancy-loading-icon {
+    width: 50px;
+    height: 50px;
+
+    display: grid;
+    place-items: center;
+
+    border-radius: 14px;
+
+    background: var(--vf-primary-soft);
+    color: var(--vf-primary);
+
+    animation:
+        vacancy-pulse 1.4s ease-in-out infinite;
+}
+
+.vacancy-loading-icon .material-symbols-rounded {
+    font-size: 25px;
+}
+
+.vacancy-form-loading strong {
+    display: block;
+
+    color: #263147;
+
+    font-size: 14px;
+}
+
+.vacancy-form-loading p {
+    margin: 4px 0 0;
+
+    color: #8b95a7;
+
+    font-size: 12px;
+}
+
+@keyframes vacancy-pulse {
+    0%,
+    100% {
+        transform: scale(1);
+        opacity: 0.8;
+    }
+
+    50% {
+        transform: scale(1.07);
+        opacity: 1;
+    }
+}
+
+
+/* ============================================================
+   TABLET
+============================================================ */
+
+@media (max-width: 1200px) {
+
+    .vacancy-form-page {
+        padding: 26px;
+    }
+
+    .vacancy-form-layout {
+        grid-template-columns:
+            minmax(0, 1fr)
+            310px;
+    }
+
+}
+
+
+/* ============================================================
+   TABLET / SMALL LAPTOP
+============================================================ */
+
+@media (max-width: 992px) {
+
+    .vacancy-form-page {
+        padding: 22px;
+    }
+
+    .vacancy-form-header {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .vacancy-header-actions {
+        width: 100%;
+    }
+
+    .vacancy-back-button {
+        width: fit-content;
+    }
+
+    .vacancy-form-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .vacancy-form-sidebar {
+        position: static;
+
+        display: grid;
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+
+        align-items: start;
+    }
+
+    .vacancy-form-sidebar
+    .vacancy-form-actions {
+        grid-column: 1 / -1;
+    }
+
+}
+
+
+/* ============================================================
+   TABLET
+============================================================ */
+
+@media (max-width: 768px) {
+
+    .vacancy-form-page {
+        padding: 18px 15px 28px;
+    }
+
+    .vacancy-title-row {
+        align-items: flex-start;
+    }
+
+    .vacancy-page-icon {
+        width: 56px;
+        height: 56px;
+
+        flex-basis: 56px;
+
+        border-radius: 15px;
+    }
+
+    .vacancy-page-icon
+    .material-symbols-rounded {
+        font-size: 27px;
+    }
+
+    .vacancy-title-row h1 {
+        font-size: 27px;
+    }
+
+    .vacancy-title-row p {
+        font-size: 13px;
+    }
+
+    .vacancy-form-card {
+        padding: 19px;
+        border-radius: 15px;
+    }
+
+    .form-grid {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .form-field.full {
+        grid-column: auto;
+    }
+
+    .vacancy-form-sidebar {
+        grid-template-columns: 1fr;
+    }
+
+    .vacancy-form-sidebar
+    .vacancy-form-actions {
+        grid-column: auto;
+    }
+
+    .vacancy-form-actions {
+        position: static;
+    }
+
+}
+
+
+/* ============================================================
+   MOBILE
+============================================================ */
+
+@media (max-width: 576px) {
+
+    .vacancy-form-page {
+        padding: 15px 12px 25px;
+    }
+
+    .vacancy-breadcrumb {
+        margin-bottom: 15px;
+
+        font-size: 11px;
+    }
+
+    .vacancy-title-row {
+        gap: 12px;
+    }
+
+    .vacancy-page-icon {
+        width: 48px;
+        height: 48px;
+
+        flex-basis: 48px;
+
+        border-radius: 13px;
+    }
+
+    .vacancy-page-icon
+    .material-symbols-rounded {
+        font-size: 23px;
+    }
+
+    .vacancy-title-kicker {
+        font-size: 10px;
+    }
+
+    .vacancy-title-row h1 {
+        font-size: 23px;
+        letter-spacing: -0.025em;
+    }
+
+    .vacancy-title-row p {
+        margin-top: 6px;
+
+        font-size: 12px;
+        line-height: 1.5;
+    }
+
+    .vacancy-header-actions {
+        width: 100%;
+    }
+
+    .vacancy-back-button {
+        width: 100%;
+    }
+
+    .vacancy-form-alert {
+        padding: 13px;
+    }
+
+    .vacancy-form-card {
+        padding: 16px;
+        border-radius: 13px;
+    }
+
+    .form-card-header {
+        gap: 10px;
+
+        padding-bottom: 16px;
+        margin-bottom: 17px;
+    }
+
+    .form-section-icon {
+        width: 37px;
+        height: 37px;
+
+        flex-basis: 37px;
+
+        border-radius: 10px;
+    }
+
+    .form-section-icon
+    .material-symbols-rounded {
+        font-size: 18px;
+    }
+
+    .form-card-header h2 {
+        font-size: 15px;
+    }
+
+    .form-card-header p {
+        font-size: 11px;
+    }
+
+    .form-field input,
+    .form-field select {
+        height: 45px;
+
+        font-size: 13px;
+    }
+
+    .form-field textarea {
+        font-size: 13px;
+    }
+
+    .textarea-footer {
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .textarea-footer small {
+        max-width: 100%;
+    }
+
+    .status-option {
+        padding: 9px;
+    }
+
+    .status-option-icon {
+        width: 33px;
+        height: 33px;
+
+        flex-basis: 33px;
+    }
+
+    .status-option-content strong {
+        font-size: 12px;
+    }
+
+    .status-option-content small {
+        font-size: 9px;
+    }
+
+    .featured-toggle {
+        align-items: flex-start;
+    }
+
+    .vacancy-form-actions {
+        grid-template-columns: 1fr;
+    }
+
+    .vacancy-save-button,
+    .vacancy-cancel-button {
+        width: 100%;
+    }
+
+}
+
+
+/* ============================================================
+   VERY SMALL DEVICES
+============================================================ */
+
+@media (max-width: 380px) {
+
+    .vacancy-form-page {
+        padding-left: 9px;
+        padding-right: 9px;
+    }
+
+    .vacancy-title-row {
+        gap: 9px;
+    }
+
+    .vacancy-page-icon {
+        width: 43px;
+        height: 43px;
+        flex-basis: 43px;
+    }
+
+    .vacancy-title-row h1 {
+        font-size: 21px;
+    }
+
+    .vacancy-title-kicker {
+        font-size: 9px;
+    }
+
+    .vacancy-form-card {
+        padding: 14px;
+    }
+
+}
+
+
+/* ============================================================
+   ACCESSIBILITY
+============================================================ */
+
+.vacancy-form-page
+button:focus-visible,
+.vacancy-form-page
+a:focus-visible,
+.vacancy-form-page
+input:focus-visible,
+.vacancy-form-page
+select:focus-visible,
+.vacancy-form-page
+textarea:focus-visible {
+    outline: 3px solid rgba(
+        109,
+        61,
+        245,
+        0.18
+    );
+
+    outline-offset: 2px;
+}
+
+
+/* ============================================================
+   REDUCED MOTION
+============================================================ */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .vacancy-form-page *,
+    .vacancy-form-page *::before,
+    .vacancy-form-page *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+
+}

@@ -1,0 +1,218 @@
+/* ═══════════════════════════════════════════════════════════════
+   RESPONSIVE / DESIGN FIXES
+   Import this stylesheet after your existing CSS files
+   (e.g. in AdminDashboard.jsx: import "./AdminDashboard.css";
+                                import "../../responsive-fixes.css";)
+   ═══════════════════════════════════════════════════════════════ */
+
+/* ---------- Global avatar box (used by <Avatar/>) ---------- */
+.avatar {
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.6);
+}
+
+/* ---------- Hero row (PortalDashboard / StudentDashboard / ParentDashboard) ---------- */
+.cc-hero-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+.cc-hero-avatar {
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.5);
+}
+@media (max-width: 480px) {
+  .cc-hero-row { gap: 10px; }
+  .cc-hero-row h1 { font-size: 1.25rem; }
+}
+
+/* ---------- Admin dashboard: calendar+weather / birthdays+exams mini-grids ---------- */
+/* Replaces hard-coded inline `gridTemplateColumns: "1fr 1fr"` so it can
+   collapse to a single column on narrow phones instead of squeezing. */
+.ad-dual-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+@media (max-width: 560px) {
+  .ad-dual-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ---------- Admin header: wrap gracefully instead of overflowing ---------- */
+.ad-head {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+.ad-head-right {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+}
+@media (max-width: 991px) {
+  .ad-head-right { width: 100%; justify-content: flex-start; }
+}
+@media (max-width: 576px) {
+  .ad-head-summary { flex-wrap: wrap; }
+  .ad-search { width: 100%; }
+  .ad-periods { order: 3; width: 100%; overflow-x: auto; }
+  .ad-datechip { display: none; } /* redundant with header date on tiny screens */
+}
+
+/* ---------- Quick stats / KPI grids: fluid columns instead of fixed counts ---------- */
+.ad-qstats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  gap: 12px;
+}
+@media (max-width: 480px) {
+  .ad-qstats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.ad-actions-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+  gap: 10px;
+}
+@media (max-width: 480px) {
+  .ad-actions-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+  }
+}
+
+/* ---------- Notification dropdown: never overflow the viewport ---------- */
+.ad-notif-wrap { position: relative; }
+.ad-notif-drop {
+  position: absolute;
+  right: 0;
+  top: calc(100% + 8px);
+  width: min(340px, 92vw);
+  max-height: 70vh;
+  overflow-y: auto;
+}
+@media (max-width: 480px) {
+  .ad-notif-drop {
+    position: fixed;
+    left: 4vw;
+    right: 4vw;
+    width: 92vw;
+    top: 64px;
+  }
+}
+
+/* ---------- App shell: sidebar drawer + topbar ---------- */
+.app-shell {
+  display: flex;
+  min-height: 100vh;
+}
+.app-sidebar {
+  width: 260px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.25s ease;
+}
+.app-sidebar-close { margin-left: auto; background: none; border: none; }
+.app-nav-label { white-space: nowrap; }
+.app-main {
+  flex: 1;
+  min-width: 0; /* prevents children with long content from blowing out the layout */
+  display: flex;
+  flex-direction: column;
+}
+.app-backdrop {
+  display: none;
+}
+.tb-hamburger { display: none; background: none; border: none; }
+
+@media (max-width: 991px) {
+  .app-sidebar {
+    position: fixed;
+    inset: 0 auto 0 0;
+    z-index: 1050;
+    transform: translateX(-100%);
+  }
+  .app-shell.nav-open .app-sidebar {
+    transform: translateX(0);
+  }
+  .app-shell.nav-open .app-backdrop {
+    display: block;
+    position: fixed;
+    inset: 0;
+    background: rgba(15, 23, 42, 0.45);
+    z-index: 1040;
+  }
+  .tb-hamburger { display: inline-flex; }
+}
+
+.app-topbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  row-gap: 8px;
+}
+.tb-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+  flex-wrap: wrap;
+}
+.tb-brand {
+  white-space: nowrap;
+}
+@media (max-width: 576px) {
+  .tb-term { display: none; }
+}
+
+.tb-search {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--ad-surface, #f1f5f9);
+  border-radius: 10px;
+  padding: 6px 12px;
+  min-width: 220px;
+}
+.tb-search input {
+  border: none;
+  background: transparent;
+  outline: none;
+  width: 100%;
+  font-size: 13px;
+}
+.tb-search-mobile {
+  margin: 0 12px 10px;
+}
+
+/* ---------- Tables: guarantee horizontal scroll never clips content ---------- */
+.table-responsive {
+  -webkit-overflow-scrolling: touch;
+}
+
+/* ---------- Mobile cards spacing ---------- */
+.ad-mobile-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.ad-mcard-top {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* ---------- General: prevent horizontal page scroll from wide fixed-width elements ---------- */
+html, body {
+  overflow-x: hidden;
+}
+img { max-width: 100%; }

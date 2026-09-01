@@ -1,0 +1,26 @@
+@media print { .no-print { display: none !important; } .mg-head .d-flex { display: none !important; } }
+.ms-sheet { padding: 28px 32px; background: #fff; }
+.ms-head { display: flex; align-items: center; gap: 18px; border-bottom: 3px solid #14245e; padding-bottom: 16px; }
+.ms-logo { width: 70px; height: 70px; border: 2px solid #14245e; border-radius: 8px; flex-shrink: 0; }
+.ms-school { flex: 1; }
+.ms-school h2 { margin: 0; font-size: 24px; font-weight: 800; color: #14245e; letter-spacing: -.4px; }
+.ms-motto { font-style: italic; color: #475569; font-size: 12.5px; }
+.ms-addr { font-size: 11.5px; color: #64748b; margin-top: 3px; }
+.ms-official { text-align: right; }
+.ms-badge { background: #14245e; color: #fff; font-size: 10px; font-weight: 800; padding: 4px 10px; border-radius: 4px; letter-spacing: .05em; }
+.ms-ref { font-size: 11px; color: #64748b; margin-top: 4px; }
+.ms-title { background: #14245e; color: #fff; text-align: center; font-weight: 800; letter-spacing: .25em; padding: 10px; margin: 18px 0; border-radius: 4px; font-size: 14px; }
+.ms-meta { display: grid; grid-template-columns: repeat(2, 1fr); gap: 6px 40px; border: 1px solid #e2e8f0; border-radius: 8px; padding: 14px 18px; margin-bottom: 18px; font-size: 13px; }
+.ms-meta span { color: #64748b; }
+.ms-table { width: 100%; border-collapse: collapse; font-size: 12.5px; }
+.ms-table th, .ms-table td { border: 1px solid #cbd5e1; padding: 7px 8px; text-align: center; }
+.ms-table thead th { background: #14245e; color: #fff; font-weight: 700; }
+.ms-table .tleft { text-align: left; }
+.ms-of { font-size: 9px; opacity: .8; display: block; }
+.ms-rank { font-weight: 800; color: #14245e; }
+.ms-fail { color: #dc2626; font-weight: 700; }
+.ms-remark { font-weight: 700; }
+.ms-excellent { color: #15803d; } .ms-vgood { color: #0f766e; } .ms-good { color: #b45309; } .ms-pass { color: #2563eb; } .ms-weak { color: #dc2626; }
+.ms-result { font-weight: 700; font-size: 11px; padding: 3px 9px; border-radius: 999px; border: 1px solid; }
+.ms-result.pass { color: #15803d; border-color: #86efac; background: #f0fdf4; }
+.ms-result.fail { color: #b91c1c; border-color: #fecaca; background: #fef2f2; }

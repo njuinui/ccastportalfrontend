@@ -1,0 +1,129 @@
+/* ═══════════════════════════════════════════════════════════
+   DESIGN TOKENS — Single source of truth for all colors,
+   spacing, radii, shadows, and typography scales.
+   Import FIRST in your app entry point.
+   ═══════════════════════════════════════════════════════════ */
+
+:root {
+  /* ── Brand ── */
+  --color-primary: #1a56db;
+  --color-primary-light: #3b82f6;
+  --color-primary-dark: #1e3a8a;
+  --color-primary-50: #eff6ff;
+  --color-primary-100: #dbeafe;
+  --color-primary-200: #bfdbfe;
+
+  /* ── Semantic ── */
+  --color-success: #16a34a;
+  --color-success-50: #f0fdf4;
+  --color-success-100: #dcfce7;
+
+  --color-warning: #d97706;
+  --color-warning-50: #fffbeb;
+  --color-warning-100: #fef3c7;
+
+  --color-danger: #dc2626;
+  --color-danger-50: #fef2f2;
+  --color-danger-100: #fee2e2;
+
+  --color-info: #0ea5e9;
+  --color-info-50: #f0f9ff;
+  --color-info-100: #e0f2fe;
+
+  --color-purple: #7c3aed;
+  --color-purple-50: #f5f3ff;
+  --color-purple-100: #ede9fe;
+
+  --color-pink: #db2777;
+  --color-pink-50: #fdf2f8;
+
+  /* ── Neutrals ── */
+  --gray-50: #f8fafc;
+  --gray-100: #f1f5f9;
+  --gray-200: #e5e7eb;
+  --gray-300: #d1d5db;
+  --gray-400: #94a3b8;
+  --gray-500: #64748b;
+  --gray-600: #475569;
+  --gray-700: #334155;
+  --gray-800: #1e293b;
+  --gray-900: #0f172a;
+
+  /* ── Surfaces ── */
+  --surface-ground: #f4f6f9;
+  --surface-card: #ffffff;
+  --surface-elevated: #ffffff;
+  --surface-overlay: rgba(15, 23, 42, 0.45);
+
+  /* ── Radii ── */
+  --radius-xs: 6px;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 14px;
+  --radius-xl: 16px;
+  --radius-full: 9999px;
+
+  /* ── Shadows ── */
+  --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.08), 0 1px 2px rgba(0, 0, 0, 0.04);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.08);
+  --shadow-lg: 0 12px 36px rgba(0, 0, 0, 0.12);
+  --shadow-xl: 0 20px 50px rgba(0, 0, 0, 0.16);
+
+  /* ── Typography ── */
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --text-xs: 10px;
+  --text-sm: 12px;
+  --text-base: 13.5px;
+  --text-md: 14px;
+  --text-lg: 16px;
+  --text-xl: 20px;
+  --text-2xl: 24px;
+  --text-3xl: 28px;
+
+  /* ── Spacing ── */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+
+  /* ── Transitions ── */
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --duration-fast: 150ms;
+  --duration-normal: 250ms;
+  --duration-slow: 500ms;
+
+  /* ── Backward-compatible aliases ── */
+  --primary: var(--color-primary);
+  --ad-success: var(--color-success);
+  --ad-success-50: var(--color-success-50);
+  --ad-success-100: var(--color-success-100);
+  --ad-warning: var(--color-warning);
+  --ad-warning-50: var(--color-warning-50);
+  --ad-warning-100: var(--color-warning-100);
+  --ad-danger: var(--color-danger);
+  --ad-danger-50: var(--color-danger-50);
+  --ad-danger-100: var(--color-danger-100);
+  --ad-info: var(--color-info);
+  --ad-info-50: var(--color-info-50);
+  --ad-info-100: var(--color-info-100);
+  --ad-purple: var(--color-purple);
+  --ad-purple-50: var(--color-purple-50);
+  --ad-purple-100: var(--color-purple-100);
+  --ad-pink: var(--color-pink);
+  --ad-pink-50: var(--color-pink-50);
+  --ad-surface: var(--gray-50);
+  --ad-card: var(--surface-card);
+  --ad-border: var(--gray-200);
+  --ad-text: var(--gray-900);
+  --ad-text-2: var(--gray-600);
+  --ad-text-3: var(--gray-400);
+  --ad-text-4: var(--gray-300);
+  --ad-radius: var(--radius-lg);
+  --ad-radius-sm: var(--radius-md);
+  --ad-radius-xs: var(--radius-sm);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.08);
+}

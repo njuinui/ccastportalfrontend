@@ -1,0 +1,921 @@
+/* src/pages/portals/StudentDashboard.css */
+.sd {
+  padding: 1.25rem;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+/* ── Color Variables ── */
+:root {
+  --primary-blue: #1a56db;
+  --primary-blue-dark: #1e40af;
+  --primary-blue-light: #3b82f6;
+  --primary-blue-bg: #eff6ff;
+  --secondary-purple: #7c3aed;
+  --secondary-purple-bg: #faf5ff;
+  --secondary-green: #059669;
+  --secondary-green-bg: #ecfdf5;
+  --secondary-pink: #db2777;
+  --secondary-pink-bg: #fdf2f8;
+  --secondary-orange: #d97706;
+  --secondary-orange-bg: #fffbeb;
+  --status-paid: #22c55e;
+  --status-paid-bg: #dcfce7;
+  --status-partial: #f59e0b;
+  --status-partial-bg: #fef3c7;
+  --status-pending: #ef4444;
+  --status-pending-bg: #fef2f2;
+  --neutral-50: #f8fafc;
+  --neutral-100: #f1f5f9;
+  --neutral-200: #e2e8f0;
+  --neutral-300: #cbd5e1;
+  --neutral-400: #94a3b8;
+  --neutral-500: #64748b;
+  --neutral-600: #475569;
+  --neutral-700: #334155;
+  --neutral-800: #1e293b;
+  --neutral-900: #0f172a;
+  --gradient-primary: linear-gradient(135deg, #1a56db 0%, #1e40af 100%);
+  --gradient-hero: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+}
+
+/* ── Skeleton ── */
+.skeleton {
+  background: linear-gradient(90deg, var(--neutral-100) 25%, var(--neutral-200) 50%, var(--neutral-100) 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s ease-in-out infinite;
+  border-radius: 16px;
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+/* ── Cards ── */
+.sd-card {
+  background: #ffffff;
+  border: 1px solid var(--neutral-200);
+  border-radius: 16px;
+  padding: 1.25rem;
+  transition: all 0.2s ease;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+}
+
+.sd-card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  border-color: var(--neutral-300);
+}
+
+/* ── Hero ── */
+.sd-hero {
+  background: var(--gradient-hero);
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  border: none;
+  padding: 1.5rem;
+}
+
+.sd-hero-left {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.sd-hero-avatar {
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.sd-hero-left h1 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin: 0;
+  line-height: 1.3;
+}
+
+.sd-hero-left p {
+  margin: 0.125rem 0 0;
+  opacity: 0.9;
+  font-size: 0.85rem;
+}
+
+.sd-hero-quote {
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(8px);
+  border-radius: 12px;
+  padding: 0.75rem 1rem;
+  border-left: 3px solid rgba(255, 255, 255, 0.3);
+}
+
+.sd-quote-mark {
+  font-size: 1.5rem;
+  opacity: 0.5;
+  line-height: 0.5;
+  margin-right: 2px;
+}
+
+.sd-hero-quote p {
+  margin: 0.25rem 0;
+  font-size: 0.85rem;
+  font-style: italic;
+  display: inline;
+}
+
+.sd-quote-author {
+  font-size: 0.75rem;
+  opacity: 0.8;
+  display: block;
+  margin-top: 0.125rem;
+}
+
+.sd-hero-meta {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  padding-top: 0.75rem;
+  margin-top: auto;
+}
+
+.sd-hero-meta > div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.125rem;
+}
+
+.sd-hero-meta span {
+  font-size: 0.65rem;
+  opacity: 0.75;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.sd-hero-meta strong {
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.sd-house-icon {
+  font-size: 0.9rem !important;
+  vertical-align: middle;
+  margin-right: 2px;
+}
+
+/* ── Stat Cards ── */
+.sd-stat-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.125rem;
+}
+
+.sd-stat-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.25rem;
+}
+
+.sd-stat-icon {
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.sd-stat-icon .material-symbols-outlined {
+  font-size: 1.25rem;
+}
+
+.sd-card-label {
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: var(--neutral-400);
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+
+.sd-stat-value {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--neutral-900);
+  line-height: 1.2;
+}
+
+.sd-stat-sub {
+  font-size: 0.8rem;
+  color: var(--neutral-500);
+}
+
+.sd-mini-bar {
+  height: 5px;
+  background: var(--neutral-100);
+  border-radius: 4px;
+  overflow: hidden;
+  margin-top: 0.5rem;
+}
+
+.sd-mini-bar-fill {
+  height: 100%;
+  border-radius: 4px;
+  transition: width 0.8s ease;
+}
+
+.sd-stat-foot {
+  font-size: 0.7rem;
+  color: var(--neutral-400);
+  margin-top: 0.25rem;
+}
+
+/* ── Fee Card ── */
+.sd-fee-card {
+  border: 1px solid #fce7f3;
+  background: linear-gradient(135deg, var(--secondary-pink-bg) 0%, #ffffff 100%);
+}
+
+.sd-fee-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.25rem;
+}
+
+.sd-fee-value {
+  font-size: 1.02rem;
+  font-weight: 700;
+  color: var(--secondary-pink);
+  padding: auto;
+  align-items: center;
+}
+
+.sd-view-link {
+  font-size: 0.8rem;
+  color: var(--primary-blue-light);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.sd-view-link:hover {
+  color: var(--primary-blue-dark);
+  text-decoration: underline;
+}
+
+/* ── Card Headers ── */
+.sd-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.75rem;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.sd-card-header h3 {
+  font-size: 0.95rem;
+  font-weight: 600;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--neutral-900);
+}
+
+.sd-card-header h3 .material-symbols-outlined {
+  font-size: 1.25rem;
+  color: var(--primary-blue-light);
+}
+
+.sd-header-date {
+  font-size: 0.7rem;
+  color: var(--neutral-400);
+  font-weight: 500;
+}
+
+.sd-view-all {
+  font-size: 0.8rem;
+  color: var(--primary-blue-light);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.sd-view-all:hover {
+  color: var(--primary-blue-dark);
+  text-decoration: underline;
+}
+
+/* ── Schedule ── */
+.sd-schedule-card .sd-list-body {
+  max-height: 320px;
+  overflow-y: auto;
+}
+
+.sd-schedule-row {
+  display: grid;
+  grid-template-columns: 8px 70px 1fr auto;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.6rem 0;
+  border-bottom: 1px solid var(--neutral-100);
+}
+
+.sd-schedule-row:last-child {
+  border-bottom: none;
+}
+
+.sd-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.sd-schedule-time {
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--neutral-500);
+}
+
+.sd-schedule-info {
+  min-width: 0;
+}
+
+.sd-schedule-subject {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--neutral-900);
+}
+
+.sd-schedule-teacher {
+  font-size: 0.7rem;
+  color: var(--neutral-400);
+}
+
+.sd-room-badge {
+  font-size: 0.65rem;
+  background: var(--neutral-100);
+  padding: 0.125rem 0.625rem;
+  border-radius: 12px;
+  color: var(--neutral-600);
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+/* ── Assignments ── */
+.sd-assignments-card .sd-list-body {
+  max-height: 320px;
+  overflow-y: auto;
+}
+
+.sd-assignment-row {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.6rem 0;
+  border-bottom: 1px solid var(--neutral-100);
+}
+
+.sd-assignment-row:last-child {
+  border-bottom: none;
+}
+
+.sd-assignment-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.sd-assignment-icon .material-symbols-outlined {
+  font-size: 1.25rem;
+}
+
+.sd-assignment-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.sd-assignment-title {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--neutral-900);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.sd-assignment-meta {
+  font-size: 0.7rem;
+  color: var(--neutral-400);
+}
+
+.sd-pill {
+  font-size: 0.65rem;
+  font-weight: 600;
+  padding: 0.125rem 0.625rem;
+  border-radius: 999px;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  white-space: nowrap;
+}
+
+.sd-pill.pending {
+  background: var(--status-pending-bg);
+  color: var(--status-pending);
+}
+
+.sd-pill.progress {
+  background: var(--status-partial-bg);
+  color: var(--status-partial);
+}
+
+.sd-pill.ok {
+  background: var(--status-paid-bg);
+  color: var(--status-paid);
+}
+
+/* ── Performance ── */
+.sd-performance-body {
+  display: flex;
+  gap: 1.5rem;
+  align-items: stretch;
+}
+
+.sd-donut-wrap {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.sd-donut-label {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.sd-donut-label strong {
+  display: block;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--neutral-900);
+}
+
+.sd-donut-label span {
+  font-size: 0.7rem;
+  color: var(--neutral-500);
+}
+
+.sd-donut-caption {
+  font-size: 0.7rem;
+  color: var(--neutral-400);
+  margin-top: 0.5rem;
+}
+
+.sd-subjects {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.375rem;
+}
+
+.sd-subjects-title {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--neutral-500);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 0.25rem;
+}
+
+.sd-subject-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.sd-subject-name {
+  font-size: 0.8rem;
+  color: var(--neutral-900);
+  min-width: 80px;
+  flex-shrink: 0;
+}
+
+.sd-subject-bar {
+  flex: 1;
+  height: 6px;
+  background: var(--neutral-100);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.sd-subject-fill {
+  height: 100%;
+  border-radius: 4px;
+  transition: width 1s ease;
+}
+
+.sd-subject-pct {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--neutral-900);
+  min-width: 36px;
+  text-align: right;
+  flex-shrink: 0;
+}
+
+/* ── Exams ── */
+.sd-list-body {
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.sd-exam-row {
+  display: flex;
+  gap: 0.75rem;
+  padding: 0.6rem 0;
+  border-bottom: 1px solid var(--neutral-100);
+  align-items: center;
+}
+
+.sd-exam-row:last-child {
+  border-bottom: none;
+}
+
+.sd-exam-date {
+  min-width: 44px;
+  text-align: center;
+  background: var(--primary-blue-bg);
+  border-radius: 8px;
+  padding: 0.25rem 0.5rem;
+  flex-shrink: 0;
+}
+
+.sd-exam-date strong {
+  display: block;
+  font-size: 1.1rem;
+  color: var(--primary-blue);
+}
+
+.sd-exam-date span {
+  font-size: 0.55rem;
+  font-weight: 600;
+  color: var(--primary-blue);
+  letter-spacing: 0.5px;
+}
+
+.sd-exam-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.sd-exam-title {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--neutral-900);
+}
+
+.sd-exam-meta {
+  font-size: 0.7rem;
+  color: var(--neutral-400);
+}
+
+.sd-exam-time {
+  text-align: right;
+  font-size: 0.7rem;
+  color: var(--neutral-500);
+  flex-shrink: 0;
+}
+
+.sd-exam-hall {
+  font-size: 0.65rem;
+  color: var(--neutral-400);
+}
+
+/* ── Results Table ── */
+.sd-table-wrap {
+  overflow-x: auto;
+  flex: 1;
+}
+
+.sd-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.8rem;
+}
+
+.sd-table thead th {
+  text-align: left;
+  font-weight: 600;
+  color: var(--neutral-400);
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  padding: 0.5rem 0.25rem;
+  border-bottom: 2px solid var(--neutral-100);
+}
+
+.sd-table tbody td {
+  padding: 0.5rem 0.25rem;
+  border-bottom: 1px solid var(--neutral-50);
+  color: var(--neutral-800);
+}
+
+.sd-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.sd-td-strong {
+  font-weight: 600;
+  color: var(--neutral-900);
+}
+
+.sd-td-meta {
+  color: var(--neutral-400);
+  font-size: 0.75rem;
+}
+
+.sd-grade-badge {
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 0.125rem 0.5rem;
+  border-radius: 8px;
+  display: inline-block;
+}
+
+.grade-a { background: var(--status-paid-bg); color: var(--status-paid); }
+.grade-b { background: var(--primary-blue-bg); color: var(--primary-blue); }
+.grade-b-plus { background: var(--primary-blue-bg); color: var(--primary-blue); }
+.grade-c { background: var(--status-partial-bg); color: var(--status-partial); }
+.grade-d { background: var(--status-pending-bg); color: var(--status-pending); }
+
+/* ── Notices ── */
+.sd-notice-row {
+  display: flex;
+  gap: 0.75rem;
+  padding: 0.6rem 0;
+  border-bottom: 1px solid var(--neutral-100);
+}
+
+.sd-notice-row:last-child {
+  border-bottom: none;
+}
+
+.sd-notice-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.sd-notice-icon .material-symbols-outlined {
+  font-size: 1.25rem;
+}
+
+.sd-notice-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.sd-notice-title {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--neutral-900);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.sd-new-badge {
+  font-size: 0.55rem;
+  background: var(--status-pending-bg);
+  color: var(--status-pending);
+  padding: 0.125rem 0.5rem;
+  border-radius: 999px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.sd-notice-meta {
+  font-size: 0.7rem;
+  color: var(--neutral-400);
+}
+
+/* ── Quick Actions ── */
+.sd-quick-actions-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.5rem;
+}
+
+.sd-quick-action {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.75rem 0.5rem;
+  background: var(--neutral-50);
+  border: 1px solid var(--neutral-100);
+  border-radius: 12px;
+  text-decoration: none;
+  color: var(--neutral-900);
+  font-size: 0.7rem;
+  font-weight: 500;
+  transition: all 0.2s;
+  text-align: center;
+}
+
+.sd-quick-action:hover {
+  background: var(--neutral-100);
+  border-color: var(--neutral-200);
+  text-decoration: none;
+  color: var(--neutral-900);
+  transform: translateY(-2px);
+}
+
+.sd-quick-action .material-symbols-outlined {
+  font-size: 1.5rem;
+  color: var(--primary-blue-light);
+}
+
+/* ── Footer Buttons ── */
+.sd-footer-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 0.75rem;
+  padding: 0.5rem;
+  border: 1px solid var(--neutral-200);
+  border-radius: 10px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--neutral-700);
+  text-decoration: none;
+  transition: all 0.2s;
+}
+
+.sd-footer-btn:hover {
+  background: var(--neutral-50);
+  border-color: var(--neutral-300);
+  text-decoration: none;
+  color: var(--neutral-700);
+}
+
+.sd-footer-btn .material-symbols-outlined {
+  font-size: 1rem;
+}
+
+/* ── Footer Bar ── */
+.sd-footer-bar {
+  background: linear-gradient(135deg, var(--primary-blue-bg) 0%, #ffffff 100%);
+  border-radius: 14px;
+  padding: 1rem 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  border: 1px solid #dbeafe;
+}
+
+.sd-footer-quote {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+  color: var(--neutral-800);
+  font-style: italic;
+}
+
+.sd-footer-quote .material-symbols-outlined {
+  color: var(--primary-blue-light);
+  font-size: 1.5rem;
+}
+
+.sd-footer-cta {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--primary-blue-dark);
+  white-space: nowrap;
+}
+
+/* ── Responsive ── */
+@media (max-width: 992px) {
+  .sd-performance-body {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .sd-subjects {
+    width: 100%;
+  }
+  
+  .sd-hero-left h1 {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .sd {
+    padding: 0.75rem;
+  }
+  
+  .sd-card {
+    padding: 1rem;
+  }
+  
+  .sd-hero {
+    padding: 1.25rem;
+  }
+  
+  .sd-hero-meta {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .sd-hero-meta > div {
+    flex-direction: row;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  .sd-quick-actions-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+  .sd-footer-bar {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .sd-stat-value {
+    font-size: 1.5rem;
+  }
+  
+  .sd-fee-value {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .sd-quick-actions-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .sd-hero-left {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .sd-hero-left h1 {
+    font-size: 1rem;
+  }
+  
+  .sd-schedule-row {
+    grid-template-columns: 8px 60px 1fr auto;
+    gap: 0.5rem;
+  }
+  
+  .sd-schedule-time {
+    font-size: 0.65rem;
+  }
+}
+/* ── Honest empty-state for widgets with no backing data yet ── */
+.sd-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 8px;
+  padding: 32px 20px;
+  color: #94a3b8;
+}
+.sd-empty .material-symbols-outlined {
+  font-size: 32px;
+  color: #cbd5e1;
+}
+.sd-empty p {
+  margin: 0;
+  font-size: 13px;
+  max-width: 260px;
+  line-height: 1.5;
+}
