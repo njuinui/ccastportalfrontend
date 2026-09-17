@@ -461,7 +461,7 @@
 
 .hc-title {
   max-width:
-    760px;
+    600px;
 
   margin:
     0 0
@@ -471,7 +471,7 @@
 
   font-size:
     clamp(
-      3rem,
+      1.25rem,
       5.4vw,
       5.2rem
     );

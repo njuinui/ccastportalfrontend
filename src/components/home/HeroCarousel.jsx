@@ -520,12 +520,14 @@ const HeroCarousel = () => {
 
             {/* EYEBROW */}
 
-            <div className="hc-eyebrow">
+            <div className="hc-eyebrow mx-2 ">
               <span className="hc-eyebrow-line" />
 
               <span>
                 {currentSlide.eyebrow}
               </span>
+
+               <span className="hc-eyebrow-line" />
             </div>
 
             {/* BADGE */}

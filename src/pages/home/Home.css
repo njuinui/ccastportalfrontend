@@ -71,7 +71,7 @@
 
 .hp-sec {
   position: relative;
-  padding: 15rem 0;
+  padding: 1.5rem 0;
   margin: 0 auto;
   background: var(--hp-bg);
 }
@@ -1218,9 +1218,15 @@
 
   border-radius: 11px !important;
 
-  background: #f8fafc !important;
+   color: #fff !important;
 
-  color: var(--hp-navy) !important;
+  background:
+    var(--hp-navy) !important;
+
+  border-color:
+    var(--hp-navy) !important;
+
+  transform: translateY(-1px);
 
   font-size: 0.8rem !important;
   font-weight: 750 !important;
@@ -1245,7 +1251,10 @@
 
   border-radius: 8px;
 
-  background: #fff;
+   background:
+    rgba(255, 255, 255, 0.14);
+
+  transform: translateX(3px);
 
   font-size: 0.7rem;
 
@@ -1255,10 +1264,9 @@
 }
 
 .hp-btn-light-block:hover {
-  color: #fff !important;
+  color: var(--hp-navy) !important;
 
-  background:
-    var(--hp-navy) !important;
+  background:transparent !important;
 
   border-color:
     var(--hp-navy) !important;
@@ -1267,8 +1275,8 @@
 }
 
 .hp-btn-light-block:hover i {
-  background:
-    rgba(255, 255, 255, 0.14);
+  background:var(--hp-navy) !important;
+  color: var(--hp-accent-soft);
 
   transform: translateX(3px);
 }
@@ -2317,7 +2325,7 @@
    ============================================================ */
 
 .hp-adm2 {
-  padding: 5rem 0;
+  padding: 2.0rem 0;
 
   background: var(--hp-bg);
 }
@@ -2560,9 +2568,9 @@
 
   border-radius: 10px;
 
-  background: #fff;
+  background: var(--hp-accent);
 
-  color: var(--hp-navy);
+  color: var(--hp-accent-soft);
 
   font-size: 0.9rem;
   font-weight: 800;
@@ -2586,7 +2594,10 @@
 
   background: var(--hp-accent);
 
-  color: #fff;
+  color: var(--hp-accent);
+  background-color: transparent;
+  border-color: var(--hp-accent);
+  border: .15rem solid var(--hp-accent);
 
   box-shadow:
     0 14px 30px rgba(0, 0, 0, 0.28);
@@ -3692,9 +3703,10 @@
   min-height: 48px;
   padding: .72rem 1.05rem;
   border-radius: 12px;
-  background: rgba(255, 255, 255, .88);
-  color: #172033;
-  border: 1px solid rgba(15, 23, 42, .10);
+  /* background: rgba(255, 255, 255, .88); */
+  background: transparent;
+  color: var(--hp-accent-soft);
+  border: .15rem solid var(--hp-accent-soft);
   font-size: .88rem;
   font-weight: 700;
   letter-spacing: -.01em;

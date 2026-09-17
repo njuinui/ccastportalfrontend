@@ -1534,7 +1534,7 @@ const Home = () => {
                     }
                   >
                     <i
-                      className="fas fa-clipboard-list"
+                      className="fas fa-clipboard-list text-white"
                       aria-hidden="true"
                     />
 
@@ -2234,9 +2234,9 @@ const Home = () => {
               <div className="col-lg-8 rv-t hp-alerts-featured" style={{ transitionDelay: "40ms" }}>
                 {renderFeaturedAnnouncement()}
 
-                <div className="row g-3 py-5 hp-alerts-mini-cards">
+                {/* <div className="row g-3 py-5 hp-alerts-mini-cards">
                   {renderMiniCards()}
-                </div>
+                </div> */}
               </div>
 
               {/* ==================================================

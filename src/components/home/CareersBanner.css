@@ -13,7 +13,7 @@
     --cb-border: #e5eaf0;
 
     position: relative;
-    padding: 6.5rem 0;
+    padding: 2.5rem 0;
     overflow: hidden;
     background:
         radial-gradient(
@@ -36,7 +36,7 @@
 .cb-card {
     position: relative;
     display: grid;
-    grid-template-columns: minmax(360px, 0.92fr) minmax(0, 1.18fr);
+    grid-template-columns: minmax(360px, 0.99fr) minmax(0, 1.18fr);
     min-height: 570px;
 
     overflow: hidden;
